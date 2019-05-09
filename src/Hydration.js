@@ -1,23 +1,40 @@
-const dataFile = require('../data/hydrationSub.js');
-const data = dataFile.hydrationData;
+const hydration = require('../data/hydrationSub.js');
+const hydrationData = hydration.hydrationData;
 
 class Hydration {
-  constructor(){
-    
+  constructor(userId) {
+    this.userID = userId;
   }
 
-  getAverageFluidConsumption(userID) {
-    return dataFile.reduce((total, fluid) => { 
-      console.log(fluid.hydrationData[userID].numOunces)
-      return total + fluid.hydrationData[userID].numOunces},0)/dataFile.length
+  userData() {
+    return hydration.find(element => element.userID === this.userID);
+  } 
+ 
+  getAvgFluidConsumption() {
+    const hydration = require('../data/hydrationSub.js');
+    const hydrationData = hydration.hydrationData;
+    var ozsConsumed = this.userData().hydrationData.reduce((acc, cur) =>
+    acc + cur.numOunces,0)/this.userData().hydrationData.length;
+    return parseFloat(ozsConsumed.toFixed(1));
   }
 
-  getDailyFluidConsumption(userID) {
-    
+  ozsConsumedOnDate(date) {
+    return this.userData().hydrationData.find(el => el.date == date).numOunces
   }
-  getWeekFluidConsumption() {
 
+  getWeekFluidConsumption(date) {
+    let fluidWeekDays = [];
+    var userFluidData = this.userData().hydrationData;
+    var firstDay = userFluidData.find(el => el.date === date);
+    var firstDayIndex = userFluidData.indexOf(firstDay);
+    let fluidData = userFluidData.slice(firstDayIndex - 6, firstDayIndex + 1);
+    for (let i = 0; i < fluidData.length; i++) {
+      fluidWeekDays.push(fluidData[i].numOunces)
+      }
+    return fluidWeekDays
   }
 }
 
-module.exports = Hydration;
+if (typeof module !== "undefined" /*&& typeof module.exports !== "undefined"*/) {
+  module.exports = Hydration;
+ }

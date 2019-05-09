@@ -69,5 +69,7 @@ class Sleep {
     return parseFloat((totalQualityHours/days).toFixed(1));
   }
 }
-
+if (typeof module !== "undefined" /* && typeof module.exports !== "undefined"*/)
+ {
 module.exports = Sleep;
+}
