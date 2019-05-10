@@ -1,5 +1,8 @@
-const hydration = require('../data/hydrationSub.js');
-const hydrationData = hydration.hydrationData;
+if (typeof module !== 'undefined' && module.exports !== 'undefined') {
+
+ hydration = require('../data/hydrationSub.js');
+ hydrationData = hydration.hydrationData;
+}
 
 class Hydration {
   constructor(userId) {

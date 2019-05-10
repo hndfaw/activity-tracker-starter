@@ -35,3 +35,4 @@ describe('Hydration', function() {
     expect(hydration.getAverageFluidConsumption(1)).to.equal(55);
   })
 });
+});

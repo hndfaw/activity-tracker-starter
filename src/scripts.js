@@ -1,13 +1,9 @@
-console.log("Hello World");
+var userFirstName = document.querySelector('.user__first_name');
 
-const userRepository = new UserRepository('../data/usersSub.js');
 
-function createTaskItemList(itemList) {
-  listEntry.innerHTML += `
-   <div class="list-entry">
-     <img class="checkbox-img" src="assets/delete.svg">
-     <p class="task-content">${itemList.content}</p>
-   </div>
-  `
-  checkCardInputs();
+window.addEventListener('load', getUsersFirstName);
+
+function getUsersFirstName() {
+  const users = new Users(1);
+   userFirstName.innerHTML = users.userFirstName(userData);
 }
