@@ -58,5 +58,7 @@ class Sleep {
     return qualityWeekDays;
   }
 }
-
+if (typeof module !== "undefined" /* && typeof module.exports !== "undefined"*/)
+ {
 module.exports = Sleep;
+}

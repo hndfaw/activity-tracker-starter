@@ -1,21 +1,21 @@
 const chai = require('chai');
 const expect = chai.expect;
 
-const User = require('../src/User');
+const Users = require('../src/Users');
 
-describe('User', function() {
+describe('Users', function() {
 
   it('should be a function', function() {
     // const user = new User();
-    expect(User).to.be.a('function');
+    expect(Users).to.be.a('function');
   });
 
   it('should be an instance of Round', function() {
-    const user = new User();
-    expect(user).to.be.an.instanceof(User);
+    const user = new Users();
+    expect(user).to.be.an.instanceof(Users);
   });
   it('should return user first name', function() {
-    const user = new User({
+    const user = new Users({
       "id": 1,
       "name": "Nyasia Weber",
       "address": "270 August Meadows, Maribelside SD 36129",
