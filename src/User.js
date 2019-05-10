@@ -2,7 +2,7 @@ if (typeof module !== 'undefined' && module.exports !== 'undefined') {
   userRepository =  require('../data/usersSub.js');
 }
 
-class Users {
+class User {
   constructor (userData) {
     this.userData = userData;
   }
@@ -13,5 +13,5 @@ class Users {
 }
 
 if (typeof module !== 'undefined' && module.exports !== 'undefined') {
-  module.exports = Users
+  module.exports = User
 }
