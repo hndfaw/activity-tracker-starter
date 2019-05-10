@@ -14,7 +14,7 @@ const sleepData = [
       },
       {
         "date": "08/05/2019",
-        "hoursSlept": 8.1,
+        "hoursSlept": 5,
         "sleepQuality": 1.9
       }
     ]
@@ -85,7 +85,7 @@ const sleepData = [
         {
           "date": "07/05/2019",
           "hoursSlept": 5.4,
-          "sleepQuality": 4.1
+          "sleepQuality": 2
         },
         {
           "date": "08/05/2019",
@@ -109,7 +109,7 @@ const sleepData = [
         },
         {
           "date": "08/05/2019",
-          "hoursSlept": 10.2,
+          "hoursSlept": 6.6,
           "sleepQuality": 3.2
         },
         {

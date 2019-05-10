@@ -29,6 +29,9 @@ describe('Hydration', function() {
   it('should return the fluid consumption for a week', function() {
     expect(hydration.getWeekFluidConsumption('14/05/2019')).to.deep.equal([39, 40, 65, 84, 33, 60, 30]);
     //let hydration2 = new Hydration(2);
-    expect(hydration2.getWeekFluidConsumption('10/07/2019')).to.deep.equal([10, 82, 98, 74, 72, 85, 11]);
+    
+  expect(hydration2.getWeekFluidConsumption('10/07/2019')).to.deep.equal([10, 82, 98, 74, 72, 85, 11]);
+  it.skip('should return a user average ounces of liquid consumed', function() {
+    expect(hydration.getAverageFluidConsumption(1)).to.equal(55);
   })
 });
