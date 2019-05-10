@@ -59,6 +59,8 @@ class Sleep {
   }
 }
 
+
 if (typeof module !== 'undefined' && module.exports !== 'undefined') {
   module.exports = Sleep;
+
 }
