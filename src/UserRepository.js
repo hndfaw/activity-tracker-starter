@@ -4,10 +4,7 @@ class UserRepository {
   }
  
   returnUserData(userID) {
-    var found = this.data.find(function(element) {
-      return element.id === userID;
-    }); 
-    return found;
+    return this.data.find(el => el.id === userID); 
   }
 
   averageStepGoal() {
@@ -38,4 +35,7 @@ class UserRepository {
   }
 }
 
-module.exports = UserRepository;
+
+if (typeof module !== 'undefined' && module.exports !== 'undefined') {
+  module.exports = UserRepository;
+}

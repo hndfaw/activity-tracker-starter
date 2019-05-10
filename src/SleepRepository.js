@@ -1,8 +1,14 @@
-const UserRepository = require('../src/UserRepository');
+if (typeof module !== 'undefined' && module.exports !== 'undefined') {
+  const UserRepository = require('../src/UserRepository');
+}
 
 class SleepRepository {
   constructor (dataFilePath) {
     this.data = require(dataFilePath);
+  }
+
+  getSleepDataOfAUser(id) {
+    return this.data.sleepData.find(el => el.userID === id).sleepData
   }
 
   averageSleepQualityAll() {
@@ -73,4 +79,6 @@ class SleepRepository {
 
 }
 
-module.exports = SleepRepository;
+if (typeof module !== 'undefined' && module.exports !== 'undefined') {
+  module.exports = SleepRepository;
+}

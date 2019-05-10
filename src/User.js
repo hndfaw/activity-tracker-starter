@@ -9,8 +9,6 @@ class Users {
   }
 }
 
-// if( typeof module !== "undefined" /*&& typeof module.exports !== "undefined"*/) {
-//   module.exports = Users;
-// }
-
-export default Users;
+if (typeof module !== 'undefined' && module.exports !== 'undefined') {
+  module.exports = User;
+}

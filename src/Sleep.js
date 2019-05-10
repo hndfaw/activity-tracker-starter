@@ -1,40 +1,40 @@
-const sleep = require('../data/sleepSample');
-const UserRepository = require('./UserRepository');
-const sleepData = sleep.sleepData;
-
+if (typeof module !== 'undefined' && module.exports !== 'undefined') {
+  const SleepRepository = require('./SleepRepository');
+}
 
 class Sleep {
   constructor(userID) {
     this.userID = userID;
   }
 
-  userData() {
-    return sleepData.find(el => el.userID === this.userID);
+  userSleepData() {
+    const sleepRepository = new SleepRepository('../data/sleepSample.js');
+    return sleepRepository.getSleepDataOfAUser(this.userID)
   }
 
   averageHrsSlept() {
-    var sAHours = this.userData().sleepData.reduce((acc, cur) =>
-    acc + cur.hoursSlept,0)/this.userData().sleepData.length;
+    var sAHours = this.userSleepData().reduce((acc, cur) =>
+    acc + cur.hoursSlept,0)/this.userSleepData().length;
     return parseFloat(sAHours.toFixed(1));
   }
 
   averageSleepQuality() {
-    var qAHours = this.userData().sleepData.reduce((acc, cur) => 
-    acc + cur.sleepQuality,0)/this.userData().sleepData.length;
+    var qAHours = this.userSleepData().reduce((acc, cur) => 
+    acc + cur.sleepQuality,0)/this.userSleepData().length;
     return parseFloat(qAHours.toFixed(1));
   }
 
   hoursSleptInDate(date) {
-    return this.userData().sleepData.find(el => el.date == date).hoursSlept
+    return this.userSleepData().find(el => el.date == date).hoursSlept
   }
 
   hoursSleptQualityInDate(date) {
-    return this.userData().sleepData.find(el => el.date == date).sleepQuality
+    return this.userSleepData().find(el => el.date == date).sleepQuality
   }
 
   hoursSleptWeek(date) {
     var sleptWeekDays = [];
-    var userSleepData = this.userData().sleepData;
+    var userSleepData = this.userSleepData();
     var firstDay = userSleepData.find(el => el.date === date);
     var firstDayIndex = userSleepData.indexOf(firstDay);
     for(let i = 0; i < userSleepData.length; i++) {
@@ -47,7 +47,7 @@ class Sleep {
 
   qualitySleptWeek(date) {
     var qualityWeekDays = [];
-    var userSleepData = this.userData().sleepData;
+    var userSleepData = this.userSleepData();
     var firstDay = userSleepData.find(el => el.date === date);
     var firstDayIndex = userSleepData.indexOf(firstDay);
     for(let i = 0; i < userSleepData.length; i++) {
@@ -58,7 +58,9 @@ class Sleep {
     return qualityWeekDays;
   }
 }
-if (typeof module !== "undefined" /* && typeof module.exports !== "undefined"*/)
- {
-module.exports = Sleep;
+
+
+if (typeof module !== 'undefined' && module.exports !== 'undefined') {
+  module.exports = Sleep;
+
 }
