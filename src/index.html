@@ -4,48 +4,53 @@
     <meta charset="UTF-8">
     <title>GETFIT</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Oxygen:300,400,700" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
   </head>
   <body>
     <aside>
-      <h1 class="aside__logo">GIT<span class="aside__logo-fit">FIT</span></h1>
+      <h1 class="aside__logo">GET<span class="aside__logo-fit">FIT</span></h1>
       <h2 class="aside__welcome">Welcome, <span class="aside__welcome-name"></span>!</h2>
-      <section class="aside__fullname-container">
-          <label class="aside__fullname-label">NAME</label>
-          <h2 class="aside__fullname">usersname</h2>
-      </section>
-      <section class="aside__address-container">
-          <label class="aside__address-label">ADDRESS</label>
-          <h2 class="aside__address">usersaddress</h2>
-      </section>
-      <section class="aside__email-container">
-          <label class="aside__email-label">E-MAIL</label>
-          <h2 class="aside__email">usersemail</h2>
-      </section>
-      <section class="aside__stride-length-container">
-          <label class="aside__stride-length-label">STRIDE LENGTH</label>
-          <h2 class="aside__stride-length">stridelength</h2>
-      </section>
+      <figure class="aside-user-info-container">
+        <section class="aside__fullname-container user-info-container">
+            <label class="aside__fullname-label user-label">NAME</label>
+            <h3 class="aside__fullname user-info">usersname</h3>
+        </section>
+        <section class="aside__address-container user-info-container">
+            <label class="aside__address-label user-label">ADDRESS</label>
+            <h3 class="aside__address user-info">usersaddress</h3>
+        </section>
+        <section class="aside__email-container user-info-container">
+            <label class="aside__email-label user-label">E-MAIL</label>
+            <h3 class="aside__email user-info">usersemail</h3>
+        </section>
+        <section class="aside__stride-length-container user-info-container">
+            <label class="aside__stride-length-label user-label">STRIDE LENGTH</label>
+            <h3 class="aside__stride-length user-info">stridelength</h3>
+        </section>
+      </figure>
     </aside>
     <main>
       <section class="steps-container">
-        <figure class="steps__header-container">
-            <h3 class="steps__header">STEPS</h3>
+        <figure class="steps__header-container widget">
+            <h3 class="steps__header-input widget-main-header">STEPS</h3>
         </figure>
-        <figure class="steps__daily-goal-container">
-            <h4 class="steps__daily-goal-label">Daily Goal</h4>
-            <div class="steps__daily-goal-you-container">
-              <h5 class="steps__daily-goal-you-label">YOU</h5>
-            </div>
-            <div class="steps__daily-goal-others-container">
-                <h5 class="steps__daily-goal-others-label">OTHERS</h5>
-            </div>
+        <figure class="steps__daily-goal-container widget">
+            <h3 class="steps__daily-goal-header widget-header">Daily Goal</h3>
+            <table class="steps__daily-goal-table">
+                <tr>
+                  <th>YOU</th>
+                  <th>OTHERS</th>
+                </tr>
+                <tr>
+                  <td ><span class="table-input your-step-goal">8000</span><span class="unit">steps</span></td>
+                  <td ><span class="table-input others-step-goal">9000</span><span class="unit">steps</span></td>
+                </tr>
+              </table>
         </figure>
-
       </section>
     </main>
-
-
     <script type="text/javascript" src="../data/users.js"></script>
     <script type="text/javascript" src="./User.js"></script>
     <script type="text/javascript" src="./Sleep.js"></script>
