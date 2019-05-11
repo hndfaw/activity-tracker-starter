@@ -1,17 +1,13 @@
-if (typeof module !== 'undefined' && module.exports !== 'undefined') {
-  userRepository =  require('../data/usersSub.js');
-}
+// class User {
+//   constructor (userData) {
+//     this.userData = userData;
+//   }
 
-class User {
-  constructor (userData) {
-    this.userData = userData;
-  }
+//   userFirstName() {
+//     return userRepository.returnUserData(this.userID).name.split(" ")[0]    
+//   }
+// }
 
-  userFirstName() {
-    return userRepository.returnUserData(this.userID).name.split(" ")[0]    
-  }
-}
-
-if (typeof module !== 'undefined' && module.exports !== 'undefined') {
-  module.exports = User
-}
+// if (typeof module !== 'undefined' && module.exports !== 'undefined') {
+//   module.exports = User
+// }

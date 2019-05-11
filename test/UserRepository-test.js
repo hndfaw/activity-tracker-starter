@@ -10,7 +10,7 @@ describe('UserRepository', function() {
   });
 
   it('should be an instance of UserRepository', function() {
-    const userRepository = new UserRepository('../data/usersSub.js');
+    const userRepository = new UserRepository();
     expect(userRepository).to.be.an.instanceof(UserRepository);
   });
 

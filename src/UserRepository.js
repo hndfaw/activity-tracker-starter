@@ -1,16 +1,33 @@
+if (typeof module !== 'undefined') {
+  User = require('./User');
+  usersFilePath = require('../data/usersSub');
+} else {
+  usersFilePath = userData;
+}
+
 class UserRepository {
-  constructor (dataFilePath) {
-    this.data = require(dataFilePath);
+  constructor (userID) {
+    this.userID = userID;
+    this.data = usersFilePath;
   }
  
   returnUserData(userID) {
     return this.data.find(el => el.id === userID); 
   }
 
+  userData() {
+    return this.data.find(el => el.id === this.userID); 
+  }
+
+  userFirstName() {
+    return this.userData().name.split(" ")[0];
+  }
+
   averageStepGoal() {
     return this.data.reduce((total, crr) =>
     total + crr.dailyStepGoal ,0)/this.data.length
   }
+
   mostCommonState(){
     var  states = this.data.map(el => el.address.split(" ").splice(-2,1)[0]);
     var x = 1; var y = 0;  var state;
