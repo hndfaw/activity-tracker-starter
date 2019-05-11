@@ -32,26 +32,53 @@
       </figure>
     </aside>
     <main>
-      <section class="steps-container">
-        <figure class="steps__header-container widget">
-            <h3 class="steps__header-input widget-main-header">STEPS</h3>
-        </figure>
-        <figure class="steps__daily-goal-container widget">
-            <h3 class="steps__daily-goal-header widget-header">Daily Goal</h3>
-            <table class="steps__daily-goal-table">
-                <tr>
-                  <th>YOU</th>
-                  <th>OTHERS</th>
-                </tr>
-                <tr>
-                  <td ><span class="table-input your-step-goal">8000</span><span class="unit">steps</span></td>
-                  <td ><span class="table-input others-step-goal">9000</span><span class="unit">steps</span></td>
-                </tr>
-              </table>
-        </figure>
+      <section class="main__column-one">
+        <section class="steps-container">
+          <figure class="steps__header-container widget">
+              <h3 class="steps__header-input widget-main-header">STEPS</h3>
+          </figure>
+          <figure class="steps__daily-goal-container widget">
+              <h3 class="steps__daily-goal-header widget-header">Daily Goal</h3>
+              <table class="steps__daily-goal-table">
+                  <tr>
+                    <th>YOU</th>
+                    <th>OTHERS</th>
+                  </tr>
+                  <tr>
+                    <td><span class="user-input your-step-goal">8000</span><span class="unit">steps</span></td>
+                    <td><span class="user-input others-step-goal">9000</span><span class="unit">steps</span></td>
+                  </tr>
+                </table>
+          </figure>
+        </section>
       </section>
+      <section class="main__column-two">
+        <section class="water-consumed-container">
+
+          <figure class="water-consumed__header-container widget">
+              <h3 class="water-consumed__header-input widget-main-header">WATER CONSUMED</h3>
+          </figure>
+<!-- ////////////////////////////////////////////////////////////////////////////////// -->
+          <figure class="water-consumed__daily-goal-container widget">
+              <h3 class="water-consumed__daily-goal-header widget-header">Today</h3>
+              <p class="water-consumed__today"><span class="water-consumed__today-input user-input">34</span><span class="unit">ounces</span></p>
+              <!-- <table class="water-consumed__daily-goal-table">
+                  <tr>
+                    <th>YOU</th>
+                    <th>OTHERS</th>
+                  </tr>
+                  <tr>
+                    <td ><span class="table-input your-step-goal">8000</span><span class="unit">steps</span></td>
+                    <td ><span class="table-input others-step-goal">9000</span><span class="unit">steps</span></td>
+                  </tr>
+                </table> -->
+          </figure>
+        </section>
+      </section>
+      </main>
     </main>
     <script type="text/javascript" src="../data/users.js"></script>
+    <script type="text/javascript" src="../data/hydration.js"></script>
     <script type="text/javascript" src="./User.js"></script>
     <script type="text/javascript" src="./Sleep.js"></script>
     <script type="text/javascript" src="./Hydration.js"></script>

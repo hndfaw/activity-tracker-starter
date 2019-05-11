@@ -11,6 +11,7 @@ body {
 
 main {
   width: 100%;
+  display: flex;
 }
 
 /* ----- sidebar ------ */
@@ -99,7 +100,7 @@ th, td {
 th {
   font-size: 14px;
 }
-.table-input {
+.user-input {
   font-size: 30px;
   font-weight: 700;
 }
@@ -112,6 +113,13 @@ th {
   font-size: 12px;
   color: gray;
 }
+
+/* water consumed */
+
+.water-consumed__today {
+  text-align: center;
+}
+
 
 
 
