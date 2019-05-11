@@ -12,6 +12,7 @@ body {
 main {
   width: 100%;
   display: flex;
+  background-color: #F5F5F5;
 }
 
 /* ----- sidebar ------ */
@@ -55,6 +56,7 @@ aside {
 .user-label {
   border-bottom: 1px solid lightgray;
   font-size: 14px;
+  color: gray;
 }
 
 .user-info {
@@ -70,6 +72,7 @@ aside {
   width: 500px;
   border-radius: 5px;
   margin: 10px;
+  background-color: #fff;
 }
 
 .widget-main-header {
@@ -105,10 +108,6 @@ th {
   font-weight: 700;
 }
 
-.steps__daily-goal-table {
-  width: 100%;
-}
-
 .unit {
   font-size: 12px;
   color: gray;
@@ -120,6 +119,29 @@ th {
   text-align: center;
 }
 
+.water-consumed__daily-goal-table {
+  margin-bottom: 10px;
+  margin-top: 15px;
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+}
 
+.water-consumed__daily-th {
+  border-bottom: 1px solid lightgray;
+}
+
+.water-consumed__daily-td,
+.water-consumed__daily-th {
+  text-align: center;
+}
+
+.water-consumed__daily-td {
+  padding-top: 5px;
+}
+
+.water-consumed__past-seven-days-header {
+  margin-top: 10px;
+}
 
 

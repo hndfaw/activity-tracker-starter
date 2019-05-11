@@ -24,7 +24,7 @@ describe('Hydration', function() {
     expect(hydration.ozsConsumedOnDate('07/05/2019')).to.equal(80);
   });
 
-  it('should return the fluid consumption for a week', function() {
-    expect(hydration.getWeekFluidConsumption('14/05/2019')).to.deep.equal([60, 33, 84, 65, 40, 39, 80]);
+  it('should return the fluid consumption for a week', function() { 
+    expect(hydration.getWeekFluidConsumption('14/05/2019')).to.deep.equal([80, 39, 40, 65, 84, 33, 60]);
   })
 });

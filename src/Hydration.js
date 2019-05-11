@@ -33,9 +33,19 @@ class Hydration {
     var fixFirstDayIndex = (firstDayIndex - 7) > 0 ? firstDayIndex - 7 : 0;
     let fluidData = userFluidData.slice(fixFirstDayIndex, firstDayIndex);
     for (let i = 0; i < fluidData.length; i++) {
-      fluidWeekDays.unshift(fluidData[i].numOunces)
+      fluidWeekDays.push(fluidData[i].numOunces )
       }      
-    return fluidWeekDays
+    var finalFluidWeekDays = [];
+    if (fluidWeekDays.length === 7) {
+      finalFluidWeekDays = fluidWeekDays
+    } else {
+      var newArray = [];
+      for(var i = 0; i < 7 - fluidWeekDays.length; i++) {
+        newArray.push('-')
+      }
+      finalFluidWeekDays = newArray.concat(fluidWeekDays)
+    }
+    return finalFluidWeekDays
   }
 }
 
