@@ -20,8 +20,12 @@ class Activity {
 
    stepsToMiles(date) {
      const steps = this.userActivityData().find(el => el.date === date).numSteps;
-     console.log(steps)
-     console.log(this.userData().strideLength)
+     const strideLength = this.userData().strideLength;
+     const milesWalked = (steps * strideLength) / 5280
+     return parseFloat(milesWalked.toFixed(2));
+   }
+   activityForADay(date) {
+     return this.userActivityData().find(el => el.date === date).minutesActive;
    }
 }
 
