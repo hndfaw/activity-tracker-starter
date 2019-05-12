@@ -27,6 +27,10 @@ class Activity {
    activityForADay(date) {
      return this.userActivityData().find(el => el.date === date).minutesActive;
    }
+   meetGoalForADay(date) {
+      return ( this.userData().dailyStepGoal <= this.userActivityData().find(el => el.date === date).numSteps ?  true :  false);
+   }
+   
 }
 
 if (typeof module !== 'undefined' && module.exports !== 'undefined') {
