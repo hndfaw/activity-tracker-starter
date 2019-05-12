@@ -115,11 +115,11 @@ th {
 
 /* water consumed */
 
-.water-consumed__today {
+.single-input {
   text-align: center;
 }
 
-.water-consumed__daily-goal-table {
+.weekly-table {
   margin-bottom: 10px;
   margin-top: 15px;
   width: 95%;
@@ -127,21 +127,22 @@ th {
   margin-right: auto;
 }
 
-.water-consumed__daily-th {
+.water-consumed__daily-th,
+.hours-slept__daily-th {
   border-bottom: 1px solid lightgray;
 }
 
-.water-consumed__daily-td,
-.water-consumed__daily-th {
+.weekly-table-data {
   text-align: center;
 }
 
-.water-consumed__daily-td {
+.water-consumed__daily-td,
+.hours-slept__daily-td {
   padding-top: 5px;
 }
 
-.water-consumed__past-seven-days-header {
+.water-consumed__past-seven-days-header,
+.hours-slept__past-seven-days-header {
   margin-top: 10px;
 }
-
 

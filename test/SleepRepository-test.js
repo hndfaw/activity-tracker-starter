@@ -1,6 +1,7 @@
 const chai = require('chai');
 const expect = chai.expect;
 const SleepRepository = require('../src/SleepRepository');
+// const sleepData = require('../data/sleepSample.js').sleepData
 
 describe('SleepRepository', function() {
   let sleepRepository
@@ -16,7 +17,7 @@ describe('SleepRepository', function() {
     expect(sleepRepository).to.be.an.instanceof(SleepRepository);
   });
 
-  it('getSlepDataOfAUser method should return sleep data of one user by ID', function() {
+  it.skip('getSlepDataOfAUser method should return sleep data of one user by ID', function() {
     expect(sleepRepository.getSleepDataOfAUser(5)).to.eql([
       {
         "date": "06/05/2019",
@@ -40,6 +41,10 @@ describe('SleepRepository', function() {
 
   it('sleepMostNames should find the Names of users who slept the most number of hours (one or more if they tied)', function() {
     expect(sleepRepository.sleepMostNames([2,4])).to.eql(["Shayne Swift","Elaina Rau"]);
+  });
+
+  it.skip('sleepMostNames should find the Names of users who slept the most number of hours (one or more if they tied)', function() {
+    expect(sleepRepository.instantiateSleep()).to.equal(sleepData);
   });
 
 });

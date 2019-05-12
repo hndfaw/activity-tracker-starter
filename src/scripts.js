@@ -60,6 +60,12 @@ $(window).on('load', () => {
     $('.water-consumed__week-day-6').html(returnWeekDay(-2));
     $('.water-consumed__week-day-7').html(returnWeekDay(-1));
     
+    const sleepRepository = new SleepRepository(1);
+    const sleep = sleepRepository.instantiateSleep();
+    let instantiatedSleep = sleep.find(item => item.userData.userID === 2)
+
+
+    console.log(instantiatedSleep.averageHrsSlept())
 
   })
 
