@@ -27,4 +27,16 @@ describe('ActivityRepository', function() {
     ]);
   });
 
+  it('should return most stairs climbed for a user for all time', function()
+  { 
+    expect(activityRepository.getAllTimeStairClimbRecord(3)).to.equal(36);
+    expect(activityRepository.getAllTimeStairClimbRecord(4)).to.equal(42);
+  });
+
+  it('should return all days a user exceded step goal', function()
+  { 
+    expect(activityRepository.getAllDaysExcededStepGoal(3)).to.deep.equal([ '08/05/2019', '09/05/2019' ]);
+    // expect(activityRepository.getAllDaysExcededStepGoal(4)).to.equal(42);
+  });
+
 });

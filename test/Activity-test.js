@@ -50,10 +50,10 @@ let activity
   { 
     expect(activity.activityForADay('08/05/2019')).to.equal(266)
   });
+
   it('should return if step goals were met for a given day', function()
   { 
     expect(activity.meetGoalForADay('07/05/2019')).to.equal(true);
     expect(activity.meetGoalForADay('06/05/2019')).to.equal(false);
   });
-
 });
