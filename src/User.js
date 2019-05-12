@@ -1,14 +1,13 @@
-class Users {
-  constructor (userData) {
-    this.userData = userData
-  }
-  
-  userFirstName() {
-    let fullName = this.userData.name.split(' ');
-    return fullName[0];
-  }
-}
+// class User {
+//   constructor (userData) {
+//     this.userData = userData;
+//   }
 
-if (typeof module !== 'undefined' && module.exports !== 'undefined') {
-  module.exports = User;
-}
+//   userFirstName() {
+//     return userRepository.returnUserData(this.userID).name.split(" ")[0]    
+//   }
+// }
+
+// if (typeof module !== 'undefined' && module.exports !== 'undefined') {
+//   module.exports = User
+// }

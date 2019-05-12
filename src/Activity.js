@@ -1,6 +1,6 @@
 if (typeof module !== 'undefined' && module.exports !== 'undefined') {
-  const ActivityRepository = require('./ActivityRepository');
-  const UserRepository = require('./UserRepository');
+   ActivityRepository = require('./ActivityRepository');
+   UserRepository = require('./UserRepository');
 }
 
 class Activity {
@@ -17,6 +17,7 @@ class Activity {
      const activityRepository = new ActivityRepository('../data/activitySample.js');
      return activityRepository.getActivityDataOfAUser(this.userID)
    }
+
    stepsToMiles(date) {
      const steps = this.userActivityData().find(el => el.date === date).numSteps;
      console.log(steps)

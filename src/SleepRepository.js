@@ -1,5 +1,5 @@
 if (typeof module !== 'undefined' && module.exports !== 'undefined') {
-  const UserRepository = require('../src/UserRepository');
+   UserRepository = require('../src/UserRepository');
 }
 
 class SleepRepository {

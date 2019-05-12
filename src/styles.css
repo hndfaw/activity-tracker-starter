@@ -1,0 +1,148 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Oxygen, sans-serif;
+  font-weight: 300;
+}
+body {
+  display: flex;
+}
+
+main {
+  width: 100%;
+  display: flex;
+  background-color: #F5F5F5;
+}
+
+/* ----- sidebar ------ */
+
+aside {
+  box-shadow: 0 0 10 10 black;
+  height: 100vh;
+  width: 350px;
+  border: gray 1px solid;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.aside__logo {
+  font-size: 30px;
+  margin-top: 20px;
+}
+
+.aside__logo-fit {
+  font-weight: 700;
+}
+
+.aside__welcome {
+  font-size: 20px;
+  margin-top: 20px;
+}
+
+.aside-user-info-container {
+  margin-top: 50px;
+  width: 90%;
+}
+
+.user-info-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.user-label {
+  border-bottom: 1px solid lightgray;
+  font-size: 14px;
+  color: gray;
+}
+
+.user-info {
+  font-size: 14px;
+}
+
+/* widget */
+
+
+.widget {
+  border: 1px solid gray;
+  height: auto;
+  width: 500px;
+  border-radius: 5px;
+  margin: 10px;
+  background-color: #fff;
+}
+
+.widget-main-header {
+  padding: 7px;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.widget-header {
+  font-size: 15px;
+  padding: 7px;
+}
+
+.steps__daily-goal-table {
+  display: block;
+  margin-left: 130px;
+  margin-bottom: 10px;
+}
+
+table, td, th {
+  border-collapse: collapse;
+}
+th, td {
+  width: 180px;
+  text-align: left;
+}
+
+th {
+  font-size: 14px;
+}
+.user-input {
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.unit {
+  font-size: 12px;
+  color: gray;
+}
+
+/* water consumed */
+
+.single-input {
+  text-align: center;
+}
+
+.weekly-table {
+  margin-bottom: 10px;
+  margin-top: 15px;
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.water-consumed__daily-th,
+.hours-slept__daily-th {
+  border-bottom: 1px solid lightgray;
+}
+
+.weekly-table-data {
+  text-align: center;
+}
+
+.water-consumed__daily-td,
+.hours-slept__daily-td {
+  padding-top: 5px;
+}
+
+.water-consumed__past-seven-days-header,
+.hours-slept__past-seven-days-header {
+  margin-top: 10px;
+}
