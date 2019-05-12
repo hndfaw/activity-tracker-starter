@@ -30,7 +30,7 @@ const returnWeekDay = (days = 0) => {
 
 $(window).on('load', () => {
     const randomID = Math.floor(Math.random() * userData.length) + 1
-
+    // const randomID = 1
     const userRepository = new UserRepository(randomID);
     
     $('.aside__welcome-name').html(userRepository.userFirstName());
@@ -52,20 +52,44 @@ $(window).on('load', () => {
     $('.water-consumed__daily-day-6').html(hydration.getWeekFluidConsumption(currentDate())[5]);
     $('.water-consumed__daily-day-7').html(hydration.getWeekFluidConsumption(currentDate())[6]);
 
-    $('.water-consumed__week-day-1').html(returnWeekDay(-7));
-    $('.water-consumed__week-day-2').html(returnWeekDay(-6));
-    $('.water-consumed__week-day-3').html(returnWeekDay(-5));
-    $('.water-consumed__week-day-4').html(returnWeekDay(-4));
-    $('.water-consumed__week-day-5').html(returnWeekDay(-3));
-    $('.water-consumed__week-day-6').html(returnWeekDay(-2));
-    $('.water-consumed__week-day-7').html(returnWeekDay(-1));
+    $('.week-day-1').html(returnWeekDay(-7));
+    $('.week-day-2').html(returnWeekDay(-6));
+    $('.week-day-3').html(returnWeekDay(-5));
+    $('.week-day-4').html(returnWeekDay(-4));
+    $('.week-day-5').html(returnWeekDay(-3));
+    $('.week-day-6').html(returnWeekDay(-2));
+    $('.week-day-7').html(returnWeekDay(-1));
     
-    const sleepRepository = new SleepRepository(1);
+    const sleepRepository = new SleepRepository(randomID);
     const sleep = sleepRepository.instantiateSleep();
-    let instantiatedSleep = sleep.find(item => item.userData.userID === 2)
+    let instantiatedSleep = sleep.find(item => item.userData.userID === randomID)
+
+    $('.hours-slept__today-input').html(instantiatedSleep.hoursSleptInDate(currentDate()));
+    $('.hours-quality__today-input').html(instantiatedSleep.hoursSleptQualityInDate(currentDate()));
+    $('.hours-slept__average-input').html(instantiatedSleep.averageHrsSlept(currentDate()));
+    $('.hours-quality__average-input').html(instantiatedSleep.averageSleepQuality(currentDate()));
+
+    $('.hours-slept__daily-day-1').html(instantiatedSleep.hoursSleptWeek(currentDate())[0]);
+    $('.hours-slept__daily-day-2').html(instantiatedSleep.hoursSleptWeek(currentDate())[1]);
+    $('.hours-slept__daily-day-3').html(instantiatedSleep.hoursSleptWeek(currentDate())[2]);
+    $('.hours-slept__daily-day-4').html(instantiatedSleep.hoursSleptWeek(currentDate())[3]);
+    $('.hours-slept__daily-day-5').html(instantiatedSleep.hoursSleptWeek(currentDate())[4]);
+    $('.hours-slept__daily-day-6').html(instantiatedSleep.hoursSleptWeek(currentDate())[5]);
+    $('.hours-slept__daily-day-7').html(instantiatedSleep.hoursSleptWeek(currentDate())[6]);
+
+    $('.hours-quality__daily-day-1').html(instantiatedSleep.qualitySleptWeek(currentDate())[0]);
+    $('.hours-quality__daily-day-2').html(instantiatedSleep.qualitySleptWeek(currentDate())[1]);
+    $('.hours-quality__daily-day-3').html(instantiatedSleep.qualitySleptWeek(currentDate())[2]);
+    $('.hours-quality__daily-day-4').html(instantiatedSleep.qualitySleptWeek(currentDate())[3]);
+    $('.hours-quality__daily-day-5').html(instantiatedSleep.qualitySleptWeek(currentDate())[4]);
+    $('.hours-quality__daily-day-6').html(instantiatedSleep.qualitySleptWeek(currentDate())[5]);
+    $('.hours-quality__daily-day-7').html(instantiatedSleep.qualitySleptWeek(currentDate())[6]);
 
 
-    console.log(instantiatedSleep.averageHrsSlept())
+    
+
+
+    console.log(instantiatedSleep.hoursSleptWeek(currentDate()))
 
   })
 

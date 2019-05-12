@@ -17,15 +17,7 @@ describe('SleepRepository', function() {
     expect(sleepRepository).to.be.an.instanceof(SleepRepository);
   });
 
-  it.skip('getSlepDataOfAUser method should return sleep data of one user by ID', function() {
-    expect(sleepRepository.getSleepDataOfAUser(5)).to.eql([
-      {
-        "date": "06/05/2019",
-        "hoursSlept": 7.6,
-        "sleepQuality": 1.5
-      }
-    ]);
-  });
+ 
 
   it('averageSleepQualityAll should return average sleeping quality of all users', function() {
     expect(sleepRepository.averageSleepQualityAll()).to.eql(3.5);
@@ -41,10 +33,6 @@ describe('SleepRepository', function() {
 
   it('sleepMostNames should find the Names of users who slept the most number of hours (one or more if they tied)', function() {
     expect(sleepRepository.sleepMostNames([2,4])).to.eql(["Shayne Swift","Elaina Rau"]);
-  });
-
-  it.skip('sleepMostNames should find the Names of users who slept the most number of hours (one or more if they tied)', function() {
-    expect(sleepRepository.instantiateSleep()).to.equal(sleepData);
   });
 
 });

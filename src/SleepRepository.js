@@ -12,10 +12,6 @@ class SleepRepository {
     this.userID = userID
   }
 
-  getSleepDataOfAUser(id) {
-    return this.data.sleepData.find(el => el.userID === id).sleepData
-  }
-
   averageSleepQualityAll() {
     var totalQualityHours = 0;
     var days = 0;
