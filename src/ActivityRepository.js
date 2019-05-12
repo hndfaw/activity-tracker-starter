@@ -1,13 +1,22 @@
+if (typeof module !== 'undefined' ) {
+  UserRepository = require('../src/UserRepository');
+  Activity = require('./Activity')
+  activityFilePath = require('../data/activitySample.js');
+} else {
+  activityFilePath = activityData
+}
+
 class ActivityRepository {
-  constructor (dataFilePath) {
-    this.data = require(dataFilePath);
+  constructor (userID) {
+    this.userID = userID;
+    this.data = activityFilePath
   }
 
-  getActivityDataOfAUser(id) {
-    return this.data.find(el => el.userID === id).activityData
+  instantiateActivity() {
+    return  this.data.map(item => item = new Activity(item));
   }
 }
 
-if (typeof module !== 'undefined' && module.exports !== 'undefined') {
+if (typeof module !== 'undefined') {
   module.exports = ActivityRepository;
 }

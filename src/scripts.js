@@ -29,8 +29,8 @@ const returnWeekDay = (days = 0) => {
 }
 
 $(window).on('load', () => {
-    const randomID = Math.floor(Math.random() * userData.length) + 1
-    // const randomID = 1
+    // const randomID = Math.floor(Math.random() * userData.length) + 1
+    const randomID = 1
     const userRepository = new UserRepository(randomID);
     
     $('.aside__welcome-name').html(userRepository.userFirstName());
@@ -85,11 +85,13 @@ $(window).on('load', () => {
     $('.hours-quality__daily-day-6').html(instantiatedSleep.qualitySleptWeek(currentDate())[5]);
     $('.hours-quality__daily-day-7').html(instantiatedSleep.qualitySleptWeek(currentDate())[6]);
 
+    const activityRepository = new ActivityRepository(randomID);
+    const activity = activityRepository.instantiateActivity();
+    let instantiatedActivity = activity.find(item => item.userData.userID === randomID)
+  
 
-    
 
-
-    console.log(instantiatedSleep.hoursSleptWeek(currentDate()))
+    console.log(instantiatedActivity.thisUserData())
 
   })
 

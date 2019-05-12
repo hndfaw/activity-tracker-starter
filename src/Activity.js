@@ -1,30 +1,27 @@
 if (typeof module !== 'undefined' && module.exports !== 'undefined') {
-   ActivityRepository = require('./ActivityRepository');
+  //  ActivityRepository = require('./ActivityRepository');
    UserRepository = require('./UserRepository');
 }
 
 class Activity {
-   constructor(userID) {
-    this.userID = userID;
+   constructor(userData) {
+    this.userData = userData;
    }
 
-   userData() {
-     const userRepository = new UserRepository('../data/usersSub.js')
-     return userRepository.returnUserData(this.userID)
-   }
-
-   userActivityData() {
-     const activityRepository = new ActivityRepository('../data/activitySample.js');
-     return activityRepository.getActivityDataOfAUser(this.userID)
+   thisUserData() {
+     const userRepository = new UserRepository()
+     return userRepository.returnUserData(this.userData.userID)
    }
 
    stepsToMiles(date) {
-     const steps = this.userActivityData().find(el => el.date === date).numSteps;
-     console.log(steps)
-     console.log(this.userData().strideLength)
+     const steps = this.userData.activityData.find(el => el.date === date).numSteps;
+     const strideLength = this.thisUserData().strideLength
+     const miles = (steps * strideLength) / 5280
+
+     return parseFloat(miles.toFixed(1))
    }
 }
 
-if (typeof module !== 'undefined' && module.exports !== 'undefined') {
+if (typeof module !== 'undefined') {
   module.exports = Activity;
 }
