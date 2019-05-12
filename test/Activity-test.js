@@ -61,4 +61,26 @@ let activity
     expect(activity.stepsToMiles("09/05/2019")).to.equal(5.3);
   });
 
+  it('activeMinutes should return minutes were a user were active for a given day', function() {
+    expect(activity.activeMinutes("07/05/2019")).to.equal(77);
+  });
+
+  it('averageActiveMinutesWeek should return average minutes active for a given week(7 days)', function() {
+    expect(activity.averageActiveMinutesWeek("09/05/2019")).to.equal(181.7);
+  });
+
+  it('reachingStepGoal should return treu if user reach the step goal for a given day', function() {
+    expect(activity.reachingStepGoal("06/05/2019")).to.equal(false);
+    const activity2 = new Activity(userActivityData);
+    expect(activity2.reachingStepGoal("07/05/2019")).to.equal(true);
+  });
+
+  it('daysExceededStepGoal should return all the days where they exceeded their step goal', function() {
+    expect(activity.daysExceededStepGoal()).to.eql(["07/05/2019"]);
+  });
+
+  it('allTimeStairClimbing should return find their all-time stair climbing record', function() {
+    expect(activity.allTimeStairClimbing()).to.eql(103);
+  });
+   
 });
