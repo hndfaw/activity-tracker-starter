@@ -1,4 +1,4 @@
-if (typeof module !== 'undefined' && module.exports !== 'undefined') {
+if (typeof module !== 'undefined') {
    UserRepository = require('../src/UserRepository');
    Sleep = require('./Sleep')
    sleepFilePath = require('../data/sleepSample.js').sleepData;

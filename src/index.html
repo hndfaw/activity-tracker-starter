@@ -10,8 +10,9 @@
   </head>
   <body>
     <aside>
-      <h1 class="aside__logo">GET<span class="aside__logo-fit">FIT</span></h1>
+      <h1 class="aside__logo orange">GET<span class="aside__logo-fit">FIT</span></h1>
       <h2 class="aside__welcome">Welcome, <span class="aside__welcome-name"></span>!</h2>
+      <h2 class="aside__date"></h2>
       <figure class="aside-user-info-container">
         <section class="aside__fullname-container user-info-container">
             <label class="aside__fullname-label user-label">NAME</label>
@@ -34,10 +35,10 @@
     <main>
       <section class="main__column-one">
         <section class="steps-container">
-          <figure class="steps__header-container widget">
+          <figure class="steps__header-container widget green-b">
               <h3 class="steps__header-input widget-main-header">STEPS</h3>
           </figure>
-          <figure class="steps__daily-goal-container widget">
+          <figure class="steps__daily-goal-container widget green">
               <h3 class="steps__daily-goal-header widget-header">Daily Goal</h3>
               <table class="steps__daily-goal-table">
                   <tr>
@@ -50,14 +51,113 @@
                   </tr>
                 </table>
           </figure>
+          <figure class="today-activities-container widget green">
+              <h3 class="today-activities__header widget-header">Today</h3>
+              <table class="today-activities-table">
+                  <tr>
+                    <td class="today-activities-input"><span class="user-input your-steps-today">0000</span><span class="unit">steps</span></td>
+                    <td class="today-activities-input"><span class="user-input your-active-minutes-today">0000</span><span class="unit">active minutes</span></td>
+                    <td class="today-activities-input"><span class="user-input your-miles-today">0000</span><span class="unit">distance/miles</span></td>
+                  </tr>
+                </table>
+          </figure>
+          <figure class="today-activities-container widget green">
+              <h3 class="today-activities__header widget-header">Today</h3>
+              <table class="today-activities-compare-table">
+                  <tr class="extra-height">
+                    <td class="today-activities-input">YOU</td>
+                    <td class="today-activities-input"><span class="user-input your-steps-today">0000</span><span class="unit">steps</span></td>
+                    <td class="today-activities-input"><span class="user-input your-active-minutes-today">0000</span><span class="unit">active minutes</span></td>
+                    <td class="today-activities-input"><span class="user-input your-stairs-climbed-today">0000</span><span class="unit">stairs climbed</span></td>
+                  </tr>
+                  <tr class="extra-height">
+                      <td class="today-activities-input">OTHERS</td>
+                      <td class="today-activities-input"><span class="user-input others-steps-today">0000</span><span class="unit">steps</span></td>
+                      <td class="today-activities-input"><span class="user-input others-active-minutes-today">0000</span><span class="unit">active minutes</span></td>
+                      <td class="today-activities-input"><span class="user-input others-stairs-climbed-today">0000</span><span class="unit">stairs climbed</span></td>
+                    </tr>
+                </table>
+          </figure>
+          <!-- 11111111111111111 -->
+          <figure class="one-week-stpes-container widget green">
+              <h3 class="one-week-stpes__header widget-header"><span>Your Steps | Past Seven Days</span><span class="unit"> (steps)</span></h3>
+              <table class="one-week-stpes-activem-stairs-table weekly-table">
+                  <tr>
+                    <th class="weekly-table-data water-consumed__daily-th week-day-1">SUN</th>
+                    <th class="weekly-table-data water-consumed__daily-th week-day-2">MON</th>
+                    <th class="weekly-table-data water-consumed__daily-th week-day-3">TUE</th>
+                    <th class="weekly-table-data water-consumed__daily-th week-day-4">WED</th>
+                    <th class="weekly-table-data water-consumed__daily-th week-day-5">THU</th>
+                    <th class="weekly-table-data water-consumed__daily-th week-day-6">FRI</th>
+                    <th class="weekly-table-data water-consumed__daily-th week-day-7">SAT</th>
+                  </tr>
+                  <tr>
+                    <td class="weekly-table-data water-consumed__daily-td one-week-stpes__daily-day-1">1</td>
+                    <td class="weekly-table-data water-consumed__daily-td one-week-stpes__daily-day-2">2</td>
+                    <td class="weekly-table-data water-consumed__daily-td one-week-stpes__daily-day-3">3</td>
+                    <td class="weekly-table-data water-consumed__daily-td one-week-stpes__daily-day-4">4</td>
+                    <td class="weekly-table-data water-consumed__daily-td one-week-stpes__daily-day-5">5</td>
+                    <td class="weekly-table-data water-consumed__daily-td one-week-stpes__daily-day-6">6</td>
+                    <td class="weekly-table-data water-consumed__daily-td one-week-stpes__daily-day-7">7</td>
+                  </tr>
+              </table>
+              </figure>
+              <!-- 222222222222222 -->
+              <figure class="one-week-flight-stairs-container widget green">
+                  <h3 class="one-week-flight-stairs__header widget-header"><span>Your Flights of Stairs Climbed | Past Seven Days</span><span class="unit"></span></h3>
+                  <table class="one-week-stpes-activem-stairs-table weekly-table">
+                      <tr>
+                        <th class="weekly-table-data water-consumed__daily-th week-day-1">SUN</th>
+                        <th class="weekly-table-data water-consumed__daily-th week-day-2">MON</th>
+                        <th class="weekly-table-data water-consumed__daily-th week-day-3">TUE</th>
+                        <th class="weekly-table-data water-consumed__daily-th week-day-4">WED</th>
+                        <th class="weekly-table-data water-consumed__daily-th week-day-5">THU</th>
+                        <th class="weekly-table-data water-consumed__daily-th week-day-6">FRI</th>
+                        <th class="weekly-table-data water-consumed__daily-th week-day-7">SAT</th>
+                      </tr>
+                      <tr>
+                        <td class="weekly-table-data water-consumed__daily-td one-week-flight-stairs__daily-day-1">1</td>
+                        <td class="weekly-table-data water-consumed__daily-td one-week-flight-stairs__daily-day-2">2</td>
+                        <td class="weekly-table-data water-consumed__daily-td one-week-flight-stairs__daily-day-3">3</td>
+                        <td class="weekly-table-data water-consumed__daily-td one-week-flight-stairs__daily-day-4">4</td>
+                        <td class="weekly-table-data water-consumed__daily-td one-week-flight-stairs__daily-day-5">5</td>
+                        <td class="weekly-table-data water-consumed__daily-td one-week-flight-stairs__daily-day-6">6</td>
+                        <td class="weekly-table-data water-consumed__daily-td one-week-flight-stairs__daily-day-7">7</td>
+                      </tr>
+                  </table>
+                  </figure>
+                  <!-- 333333333333333 -->
+                  <figure class="one-week-active-minutes-container widget green">
+                      <h3 class="one-week-active-minutes__header widget-header"><span>Your Active Minutes | Past Seven Days</span><span class="unit"> (minutes)</span></h3>
+                      <table class="one-week-stpes-activem-stairs-table weekly-table">
+                          <tr>
+                            <th class="weekly-table-data water-consumed__daily-th week-day-1">SUN</th>
+                            <th class="weekly-table-data water-consumed__daily-th week-day-2">MON</th>
+                            <th class="weekly-table-data water-consumed__daily-th week-day-3">TUE</th>
+                            <th class="weekly-table-data water-consumed__daily-th week-day-4">WED</th>
+                            <th class="weekly-table-data water-consumed__daily-th week-day-5">THU</th>
+                            <th class="weekly-table-data water-consumed__daily-th week-day-6">FRI</th>
+                            <th class="weekly-table-data water-consumed__daily-th week-day-7">SAT</th>
+                          </tr>
+                          <tr>
+                            <td class="weekly-table-data water-consumed__daily-td one-week-active-minutes__daily-day-1">1</td>
+                            <td class="weekly-table-data water-consumed__daily-td one-week-active-minutes__daily-day-2">2</td>
+                            <td class="weekly-table-data water-consumed__daily-td one-week-active-minutes__daily-day-3">3</td>
+                            <td class="weekly-table-data water-consumed__daily-td one-week-active-minutes__daily-day-4">4</td>
+                            <td class="weekly-table-data water-consumed__daily-td one-week-active-minutes__daily-day-5">5</td>
+                            <td class="weekly-table-data water-consumed__daily-td one-week-active-minutes__daily-day-6">6</td>
+                            <td class="weekly-table-data water-consumed__daily-td one-week-active-minutes__daily-day-7">7</td>
+                          </tr>
+                      </table>
+                      </figure>
         </section>
       </section>
       <section class="main__column-two">
         <section class="water-consumed-container">
-          <figure class="water-consumed__header-container widget">
+          <figure class="water-consumed__header-container widget blue-b">
               <h3 class="water-consumed__header-input widget-main-header">WATER CONSUMED</h3>
           </figure>
-          <figure class="water-consumed__container widget">
+          <figure class="water-consumed__container widget blue">
               <h3 class="water-consumed__today-header widget-header">Today</h3>
               <p class="water-consumed__today single-input"><span class="water-consumed__today-input user-input">34</span><span class="unit">ounces</span></p>
               <h3 class="water-consumed__past-seven-days-header widget-header">Past Seven Days<span class="unit"> (ounces)</span></h3>
@@ -84,13 +184,15 @@
           </figure>
         </section>
         <section class="hours-slept-container">
-            <figure class="hours-slept__header-container widget">
+            <figure class="hours-slept__header-container widget red-b">
                 <h3 class="hours-slept__header-input widget-main-header">HOURS SLEPT</h3>
             </figure>
-            <figure class="hours-slept__container widget">
+            <figure class="hours-slept__container widget red">
+                <h3 class="hours-slept__today-header widget-header">Today</h3>
                 <div class="hours_slept_inner-data-container">
+                    
                   <div class="hours_slept_inner-data-one">
-                    <h3 class="hours-slept__today-header widget-header">Today</h3>
+                    <h3 class="hours-slept__today-header widget-header">You</h3>
                     <table class="hours-slept__today-table">
                       <tr>
                         <th class="center-hand-align weekly-table-data hours-slept__daily-th hours-slept__week-day-1">Sleeping</th>
@@ -103,7 +205,7 @@
                     </table>
                   </div>
                   <div class="hours_slept_inner-data-two">
-                      <h3 class="hours-slept__today-header widget-header">Average</h3>
+                      <h3 class="hours-slept__today-header widget-header">Others</h3>
                       <table class="hours-slept__today-table">
                         <tr>
                           <th class="center-hand-align weekly-table-data hours-slept__daily-th hours-slept__week-day-1">Sleeping</th>
@@ -116,11 +218,12 @@
                       </table>
                     </div>
                 </div>
-                <h3 class="hours-slept__today-header widget-header">Today</h3>
-                <h3 class="hours-slept__past-seven-days-header widget-header">Past Seven Days<span class="unit"> (ounces)</span></h3>
+                </figure>
+                <figure class="hours-slept__header-container widget red">
+                <h3 class="hours-slept__past-seven-days-header widget-header">Sleeping | Past Seven Days<span class="unit"> (hours)</span></h3>
+
                 <table class="hours-slept__daily-goal-table weekly-table">
                     <tr>
-                      <td></td>
                       <th class="weekly-table-data water-consumed__daily-th week-day-1">SUN</th>
                       <th class="weekly-table-data water-consumed__daily-th week-day-2">MON</th>
                       <th class="weekly-table-data water-consumed__daily-th week-day-3">TUE</th>
@@ -130,7 +233,6 @@
                       <th class="weekly-table-data water-consumed__daily-th week-day-7">SAT</th>
                       </tr>
                     <tr>
-                      <td class="weekly-table-data hours-slept__daily-td">hrs</td>
                       <td class="weekly-table-data hours-slept__daily-td hours-slept__daily-day-1">1</td>
                       <td class="weekly-table-data hours-slept__daily-td hours-slept__daily-day-2">2</td>
                       <td class="weekly-table-data hours-slept__daily-td hours-slept__daily-day-3">3</td>
@@ -139,8 +241,21 @@
                       <td class="weekly-table-data hours-slept__daily-td hours-slept__daily-day-6">6</td>
                       <td class="weekly-table-data hours-slept__daily-td hours-slept__daily-day-7">7</td>
                     </tr>
+                </table>
+            </figure>
+            <figure class="hours-slept__header-container widget red">
+                <h3 class="hours-slept__past-seven-days-header widget-header">Sleep Quality | Past Seven Days<span class="unit"> (hours)</span></h3>
+                <table class="hours-slept__daily-goal-table weekly-table">
                     <tr>
-                        <td class="weekly-table-data hours-quality__daily-td">quality</td>
+                      <th class="weekly-table-data water-consumed__daily-th week-day-1">SUN</th>
+                      <th class="weekly-table-data water-consumed__daily-th week-day-2">MON</th>
+                      <th class="weekly-table-data water-consumed__daily-th week-day-3">TUE</th>
+                      <th class="weekly-table-data water-consumed__daily-th week-day-4">WED</th>
+                      <th class="weekly-table-data water-consumed__daily-th week-day-5">THU</th>
+                      <th class="weekly-table-data water-consumed__daily-th week-day-6">FRI</th>
+                      <th class="weekly-table-data water-consumed__daily-th week-day-7">SAT</th>
+                      </tr>
+                    <tr>
                         <td class="weekly-table-data hours-quality__daily-td hours-quality__daily-day-1">1</td>
                         <td class="weekly-table-data hours-quality__daily-td hours-quality__daily-day-2">2</td>
                         <td class="weekly-table-data hours-quality__daily-td hours-quality__daily-day-3">3</td>
@@ -158,11 +273,15 @@
     <script type="text/javascript" src="../data/users.js"></script>
     <script type="text/javascript" src="../data/hydration.js"></script>
     <script type="text/javascript" src="../data/sleep.js"></script>
+    <script type="text/javascript" src="../data/activity.js"></script>
     <script type="text/javascript" src="./User.js"></script>
-    <script type="text/javascript" src="./Sleep.js"></script>
-    <script type="text/javascript" src="./Hydration.js"></script>
     <script type="text/javascript" src="./userRepository.js"></script>
+    <script type="text/javascript" src="./Hydration.js"></script>
+    <script type="text/javascript" src="./Sleep.js"></script>
     <script type="text/javascript" src="./sleepRepository.js"></script>
+    <script type="text/javascript" src="./Activity.js"></script>
+    <script type="text/javascript" src="./activityRepository.js"></script>
     <script type="text/javascript" src="./scripts.js"></script>
   </body>
 </html>
+

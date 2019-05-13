@@ -5,6 +5,14 @@ const currentDate = () => {
   return currentDate;
 }
 
+const asideDate = () => {
+  const months = ["Jan", "Feb", "Mar","Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+let current_datetime = new Date();
+let formatted_date = days[current_datetime.getDay()] + " | " + months[current_datetime.getMonth()] + " " + current_datetime.getDate() + ", " +  current_datetime.getFullYear()
+return formatted_date
+}
+
 const returnWeekDay = (days = 0) => {
   const date = new Date();
   const fixedDate = date.setDate(date.getDate() + days);
@@ -29,11 +37,12 @@ const returnWeekDay = (days = 0) => {
 }
 
 $(window).on('load', () => {
-    const randomID = Math.floor(Math.random() * userData.length) + 1
-    // const randomID = 1
+    // const randomID = Math.floor(Math.random() * userData.length) + 1
+    const randomID = 1
     const userRepository = new UserRepository(randomID);
     
     $('.aside__welcome-name').html(userRepository.userFirstName());
+    $('.aside__date').html(asideDate());
     $('.aside__fullname').html(userRepository.userData().name);
     $('.aside__address').html(userRepository.userData().address);
     $('.aside__email').html(userRepository.userData().email);
@@ -85,11 +94,48 @@ $(window).on('load', () => {
     $('.hours-quality__daily-day-6').html(instantiatedSleep.qualitySleptWeek(currentDate())[5]);
     $('.hours-quality__daily-day-7').html(instantiatedSleep.qualitySleptWeek(currentDate())[6]);
 
+    const activityRepository = new ActivityRepository(randomID);
+    const activity = activityRepository.instantiateActivity();
+    let instantiatedActivity = activity.find(item => item.userData.userID === randomID)
 
+    $('.your-steps-today').html(instantiatedActivity.usersNumberOfStepsToday(currentDate()));
+    $('.your-active-minutes-today').html(instantiatedActivity.activeMinutes(currentDate()));
+    $('.your-miles-today').html(instantiatedActivity.stepsToMiles(currentDate()));
+
+    $('.others-steps-today').html(activityRepository.oneDayAverageStepsAll(currentDate()));
+    $('.others-active-minutes-today').html(activityRepository.oneDayAverageMinutesActiveAll(currentDate()));
+    $('.others-miles-today').html(instantiatedActivity.stepsToMiles(currentDate()));
+  
     
+    $('.your-stairs-climbed-today').html(instantiatedActivity.usersNumberStairsClimbedToday(currentDate()));
+    $('.others-stairs-climbed-today').html(activityRepository.oneDayAverageStairsClimbedAll(currentDate()));
+
+    $('.one-week-stpes__daily-day-1').html(instantiatedActivity.oneWeekSteps(currentDate())[0]);
+    $('.one-week-stpes__daily-day-2').html(instantiatedActivity.oneWeekSteps(currentDate())[1]);
+    $('.one-week-stpes__daily-day-3').html(instantiatedActivity.oneWeekSteps(currentDate())[2]);
+    $('.one-week-stpes__daily-day-4').html(instantiatedActivity.oneWeekSteps(currentDate())[3]);
+    $('.one-week-stpes__daily-day-5').html(instantiatedActivity.oneWeekSteps(currentDate())[4]);
+    $('.one-week-stpes__daily-day-6').html(instantiatedActivity.oneWeekSteps(currentDate())[5]);
+    $('.one-week-stpes__daily-day-7').html(instantiatedActivity.oneWeekSteps(currentDate())[6]);
+
+    $('.one-week-flight-stairs__daily-day-1').html(instantiatedActivity.oneWeekFlightsStairsClimbed(currentDate())[0]);
+    $('.one-week-flight-stairs__daily-day-2').html(instantiatedActivity.oneWeekFlightsStairsClimbed(currentDate())[1]);
+    $('.one-week-flight-stairs__daily-day-3').html(instantiatedActivity.oneWeekFlightsStairsClimbed(currentDate())[2]);
+    $('.one-week-flight-stairs__daily-day-4').html(instantiatedActivity.oneWeekFlightsStairsClimbed(currentDate())[3]);
+    $('.one-week-flight-stairs__daily-day-5').html(instantiatedActivity.oneWeekFlightsStairsClimbed(currentDate())[4]);
+    $('.one-week-flight-stairs__daily-day-6').html(instantiatedActivity.oneWeekFlightsStairsClimbed(currentDate())[5]);
+    $('.one-week-flight-stairs__daily-day-7').html(instantiatedActivity.oneWeekFlightsStairsClimbed(currentDate())[6]);
+
+    $('.one-week-active-minutes__daily-day-1').html(instantiatedActivity.oneWeekMinutesActive(currentDate())[0]);
+    $('.one-week-active-minutes__daily-day-2').html(instantiatedActivity.oneWeekMinutesActive(currentDate())[1]);
+    $('.one-week-active-minutes__daily-day-3').html(instantiatedActivity.oneWeekMinutesActive(currentDate())[2]);
+    $('.one-week-active-minutes__daily-day-4').html(instantiatedActivity.oneWeekMinutesActive(currentDate())[3]);
+    $('.one-week-active-minutes__daily-day-5').html(instantiatedActivity.oneWeekMinutesActive(currentDate())[4]);
+    $('.one-week-active-minutes__daily-day-6').html(instantiatedActivity.oneWeekMinutesActive(currentDate())[5]);
+    $('.one-week-active-minutes__daily-day-7').html(instantiatedActivity.oneWeekMinutesActive(currentDate())[6]);
 
 
-    console.log(instantiatedSleep.hoursSleptWeek(currentDate()))
+    console.log(activityRepository.oneDayAverageStairsClimbedAll(currentDate()))
 
   })
 
