@@ -41,7 +41,14 @@ let activity
   });
 
   it('stepsToMiles should convert a user’s number of steps to miles', function() {
-    expect(activity.stepsToMiles("09/05/2019")).to.equal()
+    expect(activity.stepsToMiles("08/05/2019")).to.equal(3.77);
+    const activity2 = new Activity(1);
+    expect(activity2.stepsToMiles("09/05/2019")).to.equal(5.63);
   });
+
+  it('should return the number of minutes active for a given day', function()
+  { 
+    expect(activity.activityForADay('08/05/2019')).to.equal(266)
+  })
 
 });
