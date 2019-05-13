@@ -1,3 +1,4 @@
+
 * {
   margin: 0;
   padding: 0;
@@ -157,8 +158,6 @@ th {
   margin-top: 10px;
 }
 
-
-
 .hours_slept_inner-data-container {
   display: flex;
   margin-left: auto;
@@ -178,6 +177,7 @@ th {
   padding-bottom: 5px;
   width: 100px
 }
+
 .hours-slept__today-table {
   margin-top: 20px;
 }

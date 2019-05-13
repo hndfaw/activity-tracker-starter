@@ -66,6 +66,7 @@ let activity
   });
 
   it('stepsToMiles should convert a user’s number of steps to miles', function() {
+
     expect(activity.stepsToMiles("09/05/2019")).to.equal(5.3);
   });
 
@@ -102,5 +103,4 @@ let activity
   it('oneWeekMinutesActive should return the active minutes for 7 days', function() {
     expect(activity.oneWeekMinutesActive("09/05/2019")).to.eql([202, 77, 266]);
   });
-   
 });
