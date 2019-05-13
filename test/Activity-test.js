@@ -57,6 +57,14 @@ let activity
     });
   })
 
+  it('usersNumberStairsClimbedToday should convert a user’s number of steps to miles', function() {
+    expect(activity.usersNumberStairsClimbedToday("09/05/2019")).to.equal(43);
+  });
+
+  it('usersNumberOfStepsToday should convert a user’s number of steps to miles', function() {
+    expect(activity.usersNumberOfStepsToday("09/05/2019")).to.equal(6241);
+  });
+
   it('stepsToMiles should convert a user’s number of steps to miles', function() {
     expect(activity.stepsToMiles("09/05/2019")).to.equal(5.3);
   });
@@ -79,8 +87,20 @@ let activity
     expect(activity.daysExceededStepGoal()).to.eql(["07/05/2019"]);
   });
 
-  it('allTimeStairClimbing should return find their all-time stair climbing record', function() {
+  it('allTimeStairClimbing should return their all-time stair climbing record', function() {
     expect(activity.allTimeStairClimbing()).to.eql(103);
+  });
+
+  it('oneWeekSteps should return the steps for 7 days', function() {
+    expect(activity.oneWeekSteps("09/05/2019")).to.eql([9101, 11825, 4423]);
+  });
+
+  it('oneWeekFlightsStairsClimbed should return the climbed stairs for 7 days', function() {
+    expect(activity.oneWeekFlightsStairsClimbed("09/05/2019")).to.eql([1, 28, 31]);
+  });
+
+  it('oneWeekMinutesActive should return the active minutes for 7 days', function() {
+    expect(activity.oneWeekMinutesActive("09/05/2019")).to.eql([202, 77, 266]);
   });
    
 });

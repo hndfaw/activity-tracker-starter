@@ -25,6 +25,8 @@ aside {
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: #51768C;
+  color: white;
 }
 
 .aside__logo {
@@ -38,7 +40,12 @@ aside {
 
 .aside__welcome {
   font-size: 20px;
-  margin-top: 20px;
+  margin-top: 40px;
+}
+
+.aside__date {
+  font-size: 12px;
+  margin-top: 10px;
 }
 
 .aside-user-info-container {
@@ -56,7 +63,7 @@ aside {
 .user-label {
   border-bottom: 1px solid lightgray;
   font-size: 14px;
-  color: gray;
+  color: rgba(255,255,255,0.6);
 }
 
 .user-info {
@@ -69,7 +76,7 @@ aside {
 .widget {
   border: 1px solid gray;
   height: auto;
-  width: 500px;
+  width: 560px;
   border-radius: 5px;
   margin: 10px;
   background-color: #fff;
@@ -175,3 +182,48 @@ th {
   margin-top: 20px;
 }
 
+.today-activities-table {
+  width: 90%;
+  margin-left: auto;
+  margin-bottom: 10px;
+  margin-top: 20px;
+}
+
+.green {
+  border: #548C72 1px solid;
+  color: #548C72;
+}
+
+.green-b {
+  background-color:  #548C72;
+  color: #fff;
+}
+
+.blue {
+  border: #4E8BBF 1px solid;
+  color : #4E8BBF;
+}
+
+.blue-b {
+  background-color: #4E8BBF;
+  color : #fff;
+}
+
+.red {
+  border: #D96459 1px solid;
+  color : #D96459;
+}
+
+.red-b {
+  background-color: #D96459;
+  color : #fff;
+}
+
+.extra-height {
+  height: 60px;
+}
+
+.today-activities-compare-table {
+  width: 95%;
+  margin-left: 15px;
+}

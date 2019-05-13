@@ -1,5 +1,4 @@
-if (typeof module !== 'undefined' && module.exports !== 'undefined') {
-  //  ActivityRepository = require('./ActivityRepository');
+if (typeof module !== 'undefined') {
    UserRepository = require('./UserRepository');
 }
 
@@ -12,6 +11,14 @@ class Activity {
      const userRepository = new UserRepository()
      return userRepository.returnUserData(this.userData.userID)
    }
+
+   usersNumberOfStepsToday(date) {
+     return this.userData.activityData.find(el => el.date === date).numSteps
+   }
+
+   usersNumberStairsClimbedToday(date) {
+    return this.userData.activityData.find(el => el.date === date).flightsOfStairs
+  }
 
    stepsToMiles(date) {
      const steps = this.userData.activityData.find(el => el.date === date).numSteps;
@@ -56,6 +63,46 @@ class Activity {
 
    allTimeStairClimbing() {
     return this.userData.activityData.reduce((acc, el) => acc + el.flightsOfStairs ,0);
+  }
+
+  oneWeekSteps(date) {
+    let weekSteps = [];
+    var userStepsData = this.userData.activityData;
+    var firstDay = userStepsData.find(el => el.date === date);
+    var firstDayIndex = userStepsData.indexOf(firstDay);
+    var fixFirstDayIndex = (firstDayIndex - 7) > 0 ? firstDayIndex - 7 : 0;
+    let sleepData = userStepsData.slice(fixFirstDayIndex, firstDayIndex);
+    for (let i = 0; i < sleepData.length; i++) {
+      weekSteps.push(sleepData[i].numSteps )
+   }
+    return weekSteps
+  }
+
+  oneWeekFlightsStairsClimbed(date) {
+    let weekFlightStairs = [];
+    var userStepsData = this.userData.activityData;
+    var firstDay = userStepsData.find(el => el.date === date);
+    var firstDayIndex = userStepsData.indexOf(firstDay);
+    var fixFirstDayIndex = (firstDayIndex - 7) > 0 ? firstDayIndex - 7 : 0;
+    let sleepData = userStepsData.slice(fixFirstDayIndex, firstDayIndex);
+    for (let i = 0; i < sleepData.length; i++) {
+      weekFlightStairs.push(sleepData[i].flightsOfStairs )
+   }
+    return weekFlightStairs
+  }
+  
+
+  oneWeekMinutesActive(date) {
+    let weekMinutesActive = [];
+    var userStepsData = this.userData.activityData;
+    var firstDay = userStepsData.find(el => el.date === date);
+    var firstDayIndex = userStepsData.indexOf(firstDay);
+    var fixFirstDayIndex = (firstDayIndex - 7) > 0 ? firstDayIndex - 7 : 0;
+    let sleepData = userStepsData.slice(fixFirstDayIndex, firstDayIndex);
+    for (let i = 0; i < sleepData.length; i++) {
+      weekMinutesActive.push(sleepData[i].minutesActive )
+   }
+    return weekMinutesActive
   }
 }
 
