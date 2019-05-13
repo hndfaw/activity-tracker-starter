@@ -1,20 +1,21 @@
 if (typeof module !== 'undefined' && module.exports !== 'undefined') {
    UserRepository = require('../src/UserRepository');
+   Sleep = require('./Sleep')
+   sleepFilePath = require('../data/sleepSample.js').sleepData;
+} else {
+  sleepFilePath = sleepData
 }
 
 class SleepRepository {
-  constructor (dataFilePath) {
-    this.data = require(dataFilePath);
-  }
-
-  getSleepDataOfAUser(id) {
-    return this.data.sleepData.find(el => el.userID === id).sleepData
+  constructor (userID) {
+    this.data = sleepFilePath;
+    this.userID = userID
   }
 
   averageSleepQualityAll() {
     var totalQualityHours = 0;
     var days = 0;
-    this.data.sleepData.forEach(user => {
+    this.data.forEach(user => {
        user.sleepData.forEach(day => {
           totalQualityHours += day.sleepQuality;
           days++;
@@ -25,7 +26,7 @@ class SleepRepository {
 
   sleepQualityGreaterThanThreeIDs(date) {
     let averages = [], ids = [], finalIds =[];
-    this.data.sleepData.forEach(userData => {
+    this.data.forEach(userData => {
       let total = 0, days = 0, index;
       
       userData.sleepData.forEach((el, i) => {
@@ -55,7 +56,7 @@ class SleepRepository {
   sleepMostIds(date) {
     var sleepHours = [];
     var allIds = [];
-    this.data.sleepData.forEach(user => {
+    this.data.forEach(user => {
       user.sleepData.forEach(day =>{
         if(day.date === date) {
           sleepHours.push(day.hoursSlept);
@@ -75,6 +76,10 @@ class SleepRepository {
   sleepMostNames(ids) {
     const userRepository = new UserRepository('../data/usersSub.js');
     return userRepository.returnNamesFromIds(ids)
+  }
+
+  instantiateSleep() {
+    return this.data.map(sleep => sleep = new Sleep(sleep));
   }
 
 }

@@ -1,65 +1,80 @@
-if (typeof module !== 'undefined' ) {
-   SleepRepository = require('./SleepRepository');
-}
-
 class Sleep {
-  constructor(userID) {
-    this.userID = userID;
-  }
-
-  userSleepData() {
-    const sleepRepository = new SleepRepository('../data/sleepSample.js');
-    return sleepRepository.getSleepDataOfAUser(this.userID)
+  constructor(userData) {
+    this.userData = userData;
   }
 
   averageHrsSlept() {
-    var sAHours = this.userSleepData().reduce((acc, cur) =>
-    acc + cur.hoursSlept,0)/this.userSleepData().length;
-    return parseFloat(sAHours.toFixed(1));
+    var data = this.userData.sleepData
+    var total = 0;
+    data.forEach(el =>  total += el.hoursSlept)
+    return parseFloat((total / data.length).toFixed(1));
   }
 
   averageSleepQuality() {
-    var qAHours = this.userSleepData().reduce((acc, cur) => 
-    acc + cur.sleepQuality,0)/this.userSleepData().length;
-    return parseFloat(qAHours.toFixed(1));
+    var data = this.userData.sleepData
+    var total = 0;
+    data.forEach(el =>  total += el.sleepQuality)
+    return parseFloat((total / data.length).toFixed(1));
   }
 
   hoursSleptInDate(date) {
-    return this.userSleepData().find(el => el.date == date).hoursSlept
+    var data = this.userData.sleepData
+    return data.find(el => el.date == date).hoursSlept
   }
 
   hoursSleptQualityInDate(date) {
-    return this.userSleepData().find(el => el.date == date).sleepQuality
+    var data = this.userData.sleepData
+    return data.find(el => el.date == date).sleepQuality
   }
 
   hoursSleptWeek(date) {
     var sleptWeekDays = [];
-    var userSleepData = this.userSleepData();
-    var firstDay = userSleepData.find(el => el.date === date);
-    var firstDayIndex = userSleepData.indexOf(firstDay);
+    var userSleepData = this.userData.sleepData
+    var today = userSleepData.find(el => el.date === date);
+    var todayIndex = userSleepData.indexOf(today);
     for(let i = 0; i < userSleepData.length; i++) {
-      if(i >= firstDayIndex && i <= firstDayIndex+6) {
+      if(i >= todayIndex - 7 && i < todayIndex) {
         sleptWeekDays.push(userSleepData[i].hoursSlept)
       }
     }
-    return sleptWeekDays
+    var finalSleptWeekDays = [];
+    if (sleptWeekDays.length === 7) {
+      finalSleptWeekDays = sleptWeekDays
+    } else {
+      var newArray = [];
+      for(var i = 0; i < 7 - sleptWeekDays.length; i++) {
+        newArray.push('-')
+      }
+      finalSleptWeekDays = newArray.concat(sleptWeekDays)
+    }
+    return finalSleptWeekDays
   }
 
   qualitySleptWeek(date) {
     var qualityWeekDays = [];
-    var userSleepData = this.userSleepData();
-    var firstDay = userSleepData.find(el => el.date === date);
-    var firstDayIndex = userSleepData.indexOf(firstDay);
+    var userSleepData = this.userData.sleepData
+    var today = userSleepData.find(el => el.date === date);
+    var todayIndex = userSleepData.indexOf(today);
     for(let i = 0; i < userSleepData.length; i++) {
-      if(i >= firstDayIndex && i <= firstDayIndex+6) {
+      if(i >= todayIndex - 7 && i < todayIndex) {
         qualityWeekDays.push(userSleepData[i].sleepQuality)
       }
     }
-    return qualityWeekDays;
+    var finalQualityWeekDays = [];
+    if (qualityWeekDays.length === 7) {
+      finalQualityWeekDays = qualityWeekDays
+    } else {
+      var newArray = [];
+      for(var i = 0; i < 7 - qualityWeekDays.length; i++) {
+        newArray.push('-')
+      }
+      finalQualityWeekDays = newArray.concat(qualityWeekDays)
+    }
+    return finalQualityWeekDays
   }
 }
 
 
-if (typeof module !== 'undefined' && module.exports !== 'undefined') {
+if (typeof module !== 'undefined') {
   module.exports = Sleep;
 }
