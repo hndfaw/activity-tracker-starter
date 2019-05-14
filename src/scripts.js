@@ -157,7 +157,26 @@ $(window).on('load', () => {
     })
 
     var max = Math.max(...totals)
-    console.log(max)
+    console.log(totals.indexOf(max)+1)
+
+    if((totals.indexOf(max)+1) === 1) {
+      $('.winner-you').css("color", "#548C72")
+    } else if ((totals.indexOf(max)+1) === 2){
+      $('.winner-person-2').css("color", "#548C72")
+    } else if ((totals.indexOf(max)+1) === 3){
+      $('.winner-person-3').css("color", "#548C72")
+    } else if ((totals.indexOf(max)+1) === 4){
+      $('.winner-person-4').css("color", "#548C72")
+    } else {
+      $('.winner-person-5').css("color", "#548C72")
+    }
+    
+
+
+
+
+    // winner-you
+    // winner-person-2
 
     $('.steps-against-friends-you-day-1').html(weeks[0][0]);
     $('.steps-against-friends-you-day-2').html(weeks[0][1]);
