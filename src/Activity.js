@@ -104,6 +104,22 @@ class Activity {
    }
     return weekMinutesActive
   }
+
+  threeDayIncreasingSteps(userID) {
+    var threeInARow = [];
+    var threeInARowDates = [];
+    var userStepData = this.userData.activityData;
+    const tIAR = userStepData.forEach(function(user) {
+      if (threeInARow.length >= 3) {
+        threeInARow.shift()
+      }
+      threeInARow.push(user.numSteps);
+      if (threeInARow[2] > threeInARow[1] && threeInARow[1] > threeInARow[0]) {
+        threeInARowDates.push(user.date)
+      }
+    });
+    return threeInARowDates;
+  }
 }
 
 if (typeof module !== 'undefined') {
