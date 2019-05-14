@@ -62,7 +62,7 @@ class Activity {
    }
 
    allTimeStairClimbing() {
-    return this.userData.activityData.reduce((acc, el) => acc + el.flightsOfStairs ,0);
+    return this.userData.activityData.reduce((acc, el) => acc + el.flightsOfStairs , 0);
   }
 
   oneWeekSteps(date) {
@@ -91,7 +91,6 @@ class Activity {
     return weekFlightStairs
   }
   
-
   oneWeekMinutesActive(date) {
     let weekMinutesActive = [];
     var userStepsData = this.userData.activityData;
@@ -103,6 +102,25 @@ class Activity {
       weekMinutesActive.push(sleepData[i].minutesActive )
    }
     return weekMinutesActive
+  }
+
+  threeDayIncreasingSteps(userID) {
+    var threeInARow = [];
+    var threeInARowDates = [];
+    var userStepData = this.userData.activityData;
+    const tIAR = userStepData.forEach(function(user) {
+      if (threeInARow.length >= 3) {
+        console.log('Im in shift territory')
+        threeInARow.shift()
+      }
+      threeInARow.push(user.numSteps);
+      console.log('ThreeInARow is:' ,threeInARow)
+      if (threeInARow[2] > threeInARow[1] && threeInARow[1] > threeInARow[0]) {
+        console.log('Yeah!!!');
+        threeInARowDates.push(user.date)
+      }
+    });
+    return threeInARowDates;
   }
 }
 
