@@ -7,10 +7,10 @@ const currentDate = () => {
 
 const asideDate = () => {
   const months = ["Jan", "Feb", "Mar","Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-let current_datetime = new Date();
-let formatted_date = days[current_datetime.getDay()] + " | " + months[current_datetime.getMonth()] + " " + current_datetime.getDate() + ", " +  current_datetime.getFullYear()
-return formatted_date
+  const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+  let current_datetime = new Date();
+  let formatted_date = days[current_datetime.getDay()] + " | " + months[current_datetime.getMonth()] + " " + current_datetime.getDate() + ", " +  current_datetime.getFullYear()
+  return formatted_date
 }
 
 const returnWeekDay = (days = 0) => {
@@ -18,26 +18,25 @@ const returnWeekDay = (days = 0) => {
   const fixedDate = date.setDate(date.getDate() + days);
   const d = new Date(fixedDate).getDay();
   var day;
-   if (d === 0) {
-     day = "SUN";
-   } else if (d === 1) {
-     day = "MON";
-   } else if (d === 2) {
-    day = "TUE";
-  } else if (d === 3) {
-    day = "WED";
-  } else if (d === 4) {
-    day = "THU";
-  } else if (d === 5) {
-    day = "FRI";
-  } else {
-    day = "SAT";
-  }
+    if (d === 0) {
+      day = "SUN";
+    } else if (d === 1) {
+      day = "MON";
+    } else if (d === 2) {
+      day = "TUE";
+    } else if (d === 3) {
+      day = "WED";
+    } else if (d === 4) {
+      day = "THU";
+    } else if (d === 5) {
+      day = "FRI";
+    } else {
+      day = "SAT";
+    }
   return day;
 }
 
 $(window).on('load', () => {
-    
     var newIDs = [];
     for (let i = 1; newIDs.length < 5; i++) {
         const randomID = Math.floor(Math.random() * userData.length) + 1;
@@ -113,7 +112,6 @@ $(window).on('load', () => {
     $('.others-active-minutes-today').html(activityRepository.oneDayAverageMinutesActiveAll(currentDate()));
     $('.others-miles-today').html(instantiatedActivity.stepsToMiles(currentDate()));
   
-    
     $('.your-stairs-climbed-today').html(instantiatedActivity.usersNumberStairsClimbedToday(currentDate()));
     $('.others-stairs-climbed-today').html(activityRepository.oneDayAverageStairsClimbedAll(currentDate()));
 
@@ -171,13 +169,6 @@ $(window).on('load', () => {
       $('.winner-person-5').css("color", "#548C72")
     }
     
-
-
-
-
-    // winner-you
-    // winner-person-2
-
     $('.steps-against-friends-you-day-1').html(weeks[0][0]);
     $('.steps-against-friends-you-day-2').html(weeks[0][1]);
     $('.steps-against-friends-you-day-3').html(weeks[0][2]);
@@ -228,6 +219,3 @@ $(window).on('load', () => {
     $('.steps-against-friends-total-steps-person-5').html(totals[4]);
     
   })
-
-
-  
