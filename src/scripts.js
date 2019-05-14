@@ -37,10 +37,17 @@ const returnWeekDay = (days = 0) => {
 }
 
 $(window).on('load', () => {
-    // const randomID = Math.floor(Math.random() * userData.length) + 1
-    const randomID = 1
-    const userRepository = new UserRepository(randomID);
     
+    var newIDs = [];
+    for (let i = 1; newIDs.length < 5; i++) {
+        const randomID = Math.floor(Math.random() * userData.length) + 1;
+        if(newIDs.indexOf(randomID) === -1) {newIDs.push(randomID)}
+    }
+
+    const randomID = newIDs[0]
+
+    const userRepository = new UserRepository(randomID);
+
     $('.aside__welcome-name').html(userRepository.userFirstName());
     $('.aside__date').html(asideDate());
     $('.aside__fullname').html(userRepository.userData().name);
@@ -135,8 +142,31 @@ $(window).on('load', () => {
     $('.one-week-active-minutes__daily-day-7').html(instantiatedActivity.oneWeekMinutesActive(currentDate())[6]);
 
 
-    console.log(activityRepository.oneDayAverageStairsClimbedAll(currentDate()))
+    
+    var names = userRepository.returnNamesFromIds(newIDs)
+    var weeks = [];
+    var totals = [];
+    newIDs.forEach(el => {
+        el = activity.find(item => item.userData.userID === el);
 
+        var total = el.oneWeekSteps(currentDate()).reduce((acu, cur) => {
+            return acu + cur;
+        },0)
+
+        weeks.push(el.oneWeekSteps(currentDate()));
+        totals.push(total)
+    })
+
+    
+
+    
+
+    console.log(names)
+
+
+    // console.log(userRepository.returnNamesFromIds(IDs))
+    // console.log(weeks);
+    // console.log(totals);
   })
 
 

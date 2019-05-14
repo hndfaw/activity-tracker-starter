@@ -45,7 +45,7 @@ class UserRepository {
     var names = [];
     ids.forEach(i => {
       this.data.forEach(user => {
-        if(user.id === i) {names.push(user.name)}
+        if(user.id === i) {names.push(user.name.split(" ")[0])}
       })
     })
     return names
