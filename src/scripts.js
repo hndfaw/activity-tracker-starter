@@ -142,7 +142,6 @@ $(window).on('load', () => {
     $('.one-week-active-minutes__daily-day-7').html(instantiatedActivity.oneWeekMinutesActive(currentDate())[6]);
 
 
-    
     var names = userRepository.returnNamesFromIds(newIDs)
     var weeks = [];
     var totals = [];
@@ -151,22 +150,64 @@ $(window).on('load', () => {
 
         var total = el.oneWeekSteps(currentDate()).reduce((acu, cur) => {
             return acu + cur;
-        },0)
+        })
 
         weeks.push(el.oneWeekSteps(currentDate()));
         totals.push(total)
     })
 
+    var max = Math.max(...totals)
+    console.log(max)
+
+    $('.steps-against-friends-you-day-1').html(weeks[0][0]);
+    $('.steps-against-friends-you-day-2').html(weeks[0][1]);
+    $('.steps-against-friends-you-day-3').html(weeks[0][2]);
+    $('.steps-against-friends-you-day-4').html(weeks[0][3]);
+    $('.steps-against-friends-you-day-5').html(weeks[0][4]);
+    $('.steps-against-friends-you-day-6').html(weeks[0][5]);
+    $('.steps-against-friends-you-day-7').html(weeks[0][6]);
+    $('.steps-against-friends-total-steps-you').html(totals[0]);
+
+    $('.steps-against-friends-name-2').html(names[1]);
+    $('.steps-against-friends-person-2-day-1').html(weeks[1][0]);
+    $('.steps-against-friends-person-2-day-2').html(weeks[1][1]);
+    $('.steps-against-friends-person-2-day-3').html(weeks[1][2]);
+    $('.steps-against-friends-person-2-day-4').html(weeks[1][3]);
+    $('.steps-against-friends-person-2-day-5').html(weeks[1][4]);
+    $('.steps-against-friends-person-2-day-6').html(weeks[1][5]);
+    $('.steps-against-friends-person-2-day-7').html(weeks[1][6]);
+    $('.steps-against-friends-total-steps-person-2').html(totals[1]);
+
+    $('.steps-against-friends-name-3').html(names[2]);
+    $('.steps-against-friends-person-3-day-1').html(weeks[2][0]);
+    $('.steps-against-friends-person-3-day-2').html(weeks[2][1]);
+    $('.steps-against-friends-person-3-day-3').html(weeks[2][2]);
+    $('.steps-against-friends-person-3-day-4').html(weeks[2][3]);
+    $('.steps-against-friends-person-3-day-5').html(weeks[2][4]);
+    $('.steps-against-friends-person-3-day-6').html(weeks[2][5]);
+    $('.steps-against-friends-person-3-day-7').html(weeks[2][6]);
+    $('.steps-against-friends-total-steps-person-3').html(totals[2]);
+
+    $('.steps-against-friends-name-4').html(names[3]);
+    $('.steps-against-friends-person-4-day-1').html(weeks[3][0]);
+    $('.steps-against-friends-person-4-day-2').html(weeks[3][1]);
+    $('.steps-against-friends-person-4-day-3').html(weeks[3][2]);
+    $('.steps-against-friends-person-4-day-4').html(weeks[3][3]);
+    $('.steps-against-friends-person-4-day-5').html(weeks[3][4]);
+    $('.steps-against-friends-person-4-day-6').html(weeks[3][5]);
+    $('.steps-against-friends-person-4-day-7').html(weeks[3][6]);
+    $('.steps-against-friends-total-steps-person-4').html(totals[3]);
+
+    $('.steps-against-friends-name-5').html(names[4]);
+    $('.steps-against-friends-person-5-day-1').html(weeks[4][0]);
+    $('.steps-against-friends-person-5-day-2').html(weeks[4][1]);
+    $('.steps-against-friends-person-5-day-3').html(weeks[4][2]);
+    $('.steps-against-friends-person-5-day-4').html(weeks[4][3]);
+    $('.steps-against-friends-person-5-day-5').html(weeks[4][4]);
+    $('.steps-against-friends-person-5-day-6').html(weeks[4][5]);
+    $('.steps-against-friends-person-5-day-7').html(weeks[4][6]);
+    $('.steps-against-friends-total-steps-person-5').html(totals[4]);
     
-
-    
-
-    console.log(names)
-
-
-    // console.log(userRepository.returnNamesFromIds(IDs))
-    // console.log(weeks);
-    // console.log(totals);
   })
 
 

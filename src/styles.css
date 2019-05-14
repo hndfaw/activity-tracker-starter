@@ -203,6 +203,7 @@ th {
 .green-b {
   background-color:  #548C72;
   color: #fff;
+  border: 1px solid #548C72;
 }
 
 .blue {
@@ -214,6 +215,7 @@ th {
 .blue-b {
   background-color: #4E8BBF;
   color : #fff;
+  border: 1px solid #4E8BBF;
 }
 
 .red {
@@ -225,6 +227,19 @@ th {
 .red-b {
   background-color: #D96459;
   color : #fff;
+  border: 1px solid #D96459;
+}
+
+.yellow {
+  border: #edc63d 1px solid;
+  color : #edc63d;
+  background-color: rgba(237, 198, 61, 0.05);
+}
+
+.yellow-b {
+  background-color: #edc63d;
+  color : #fff;
+  border: 1px solid #edc63d;
 }
 
 .extra-height {
@@ -234,4 +249,21 @@ th {
 .today-activities-compare-table {
   width: 95%;
   margin-left: 15px;
+}
+
+.text-aling-center {
+  text-align: center;
+}
+
+.text-aling-left {
+  text-align: left;
+}
+
+.text-aling-right {
+  text-align: right;
+}
+
+.tr-hiehgt-30 {
+  height: 40px;
+  border-bottom: 1px solid lightgray;
 }
