@@ -25,39 +25,37 @@ class SleepRepository {
   }
 
   sleepQualityGreaterThanThreeIDs(date) {
-    let averages = [],
-      ids = [],
-      finalIds = [];
+    let averages = [], ids = [], finalIds = [];
     this.data.forEach(userData => {
-      let total = 0,
-        days = 0,
-        index;
+      let total = 0,  days = 0, index;
 
       userData.sleepData.forEach((el, i) => {
-        if (el.date === date) {
-          index = i;
-        }
+        if (el.date === date) {index = i;}
       });
-      for (let i = 0; i < userData.sleepData.length; i++) {
+      
+      userData.sleepData.forEach((el, i) => {
         if (i >= index && i <= index + 6) {
           total += userData.sleepData[i].sleepQuality;
           days++;
         }
-      }
+      }) 
+
       averages.push(parseFloat((total / days).toFixed(1)));
       ids.push(userData.userID);
     });
-    for (let i = 0; i < averages.length; i++) {
+
+    averages.forEach((el, i) => {
       if (averages[i] >= 3) {
         finalIds.push(ids[i]);
       }
-    }
+    })
+
     this.sleepQualityGreaterThanThreeNames(finalIds);
     return finalIds;
   }
 
   sleepQualityGreaterThanThreeNames(finalIds) {
-    const userRepository = new UserRepository("../data/usersSub.js");
+    const userRepository = new UserRepository();
     return userRepository.returnNamesFromIds(finalIds);
   }
 
@@ -74,11 +72,12 @@ class SleepRepository {
     });
     var max = Math.max(...sleepHours);
     var ids = [];
-    for (let i = 0; i < sleepHours.length; i++) {
+    sleepHours.forEach((el,i) => {
       if (sleepHours[i] === max) {
         ids.push(allIds[i]);
       }
-    }
+    })
+
     this.sleepMostNames(ids);
     return ids;
   }

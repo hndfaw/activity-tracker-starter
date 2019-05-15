@@ -22,31 +22,27 @@ class Activity {
   }
 
   stepsToMiles(date) {
-    const steps = this.userData.activityData.find(el => el.date === date)
-      .numSteps;
+    const steps = this.userData.activityData.find(el =>
+      el.date === date).numSteps;
     const strideLength = this.thisUserData().strideLength;
     const miles = (steps * strideLength) / 5280;
     return parseFloat(miles.toFixed(1));
   }
 
   activeMinutes(date) {
-    return this.userData.activityData.find(day => day.date === date)
-      .minutesActive;
+    return this.userData.activityData.find(day =>
+      day.date === date).minutesActive;
   }
 
   averageActiveMinutesWeek(date) {
     var total = 0;
-    var items = 0;
     var userActivityData = this.userData.activityData;
     var today = userActivityData.find(el => el.date === date);
     var todayIndex = userActivityData.indexOf(today);
-    for (let i = 0; i < userActivityData.length; i++) {
-      if (i >= todayIndex - 7 && i < todayIndex) {
-        total += userActivityData[i].minutesActive;
-        items++;
-      }
-    }
-    return parseFloat((total / items).toFixed(1));
+    var fixTodayIndex = todayIndex - 7 > 0 ? todayIndex - 7 : 0;
+    let data = userActivityData.slice(fixTodayIndex, todayIndex);
+    data.forEach(el => total += el.minutesActive)
+    return parseFloat((total / data.length).toFixed(1));
   }
 
   reachingStepGoal(date) {
@@ -70,48 +66,35 @@ class Activity {
 
   allTimeStairClimbing() {
     return this.userData.activityData.reduce(
-      (acc, el) => acc + el.flightsOfStairs,
-      0
-    );
+      (acc, el) => acc + el.flightsOfStairs
+      , 0);
   }
 
   oneWeekSteps(date) {
-    let weekSteps = [];
     var userStepsData = this.userData.activityData;
     var firstDay = userStepsData.find(el => el.date === date);
     var firstDayIndex = userStepsData.indexOf(firstDay);
     var fixFirstDayIndex = firstDayIndex - 7 > 0 ? firstDayIndex - 7 : 0;
     let sleepData = userStepsData.slice(fixFirstDayIndex, firstDayIndex);
-    for (let i = 0; i < sleepData.length; i++) {
-      weekSteps.push(sleepData[i].numSteps);
-    }
-    return weekSteps;
+    return sleepData.map(el => el.numSteps)
   }
 
   oneWeekFlightsStairsClimbed(date) {
-    let weekFlightStairs = [];
     var userStepsData = this.userData.activityData;
     var firstDay = userStepsData.find(el => el.date === date);
     var firstDayIndex = userStepsData.indexOf(firstDay);
     var fixFirstDayIndex = firstDayIndex - 7 > 0 ? firstDayIndex - 7 : 0;
     let sleepData = userStepsData.slice(fixFirstDayIndex, firstDayIndex);
-    for (let i = 0; i < sleepData.length; i++) {
-      weekFlightStairs.push(sleepData[i].flightsOfStairs);
-    }
-    return weekFlightStairs;
+    return sleepData.map(el => el.flightsOfStairs)
   }
 
   oneWeekMinutesActive(date) {
-    let weekMinutesActive = [];
     var userStepsData = this.userData.activityData;
     var firstDay = userStepsData.find(el => el.date === date);
     var firstDayIndex = userStepsData.indexOf(firstDay);
     var fixFirstDayIndex = firstDayIndex - 7 > 0 ? firstDayIndex - 7 : 0;
-    let sleepData = userStepsData.slice(fixFirstDayIndex, firstDayIndex);
-    for (let i = 0; i < sleepData.length; i++) {
-      weekMinutesActive.push(sleepData[i].minutesActive);
-    }
-    return weekMinutesActive;
+    var sleepData = userStepsData.slice(fixFirstDayIndex, firstDayIndex);
+    return sleepData.map(el => el.minutesActive)
   }
 
   threeDayIncreasingSteps() {

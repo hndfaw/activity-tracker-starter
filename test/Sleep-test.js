@@ -37,24 +37,11 @@ describe("Sleep", function() {
     });
 
   it("hoursSleptWeek should return hours slept of one week", function() {
-    expect(sleep.hoursSleptWeek("08/05/2019")).to.eql([
-      "-",
-      "-",
-      "-",
-      "-",
-      "-",
-      8,
-      10.7
-    ]);
+    expect(sleep.hoursSleptWeek("08/05/2019")).to.eql([8, 10.7]);
   });
 
   it("qualitySleptWeek should return sleeping quality of one week", function() {
     expect(sleep.qualitySleptWeek("08/05/2019")).to.eql([
-      "-",
-      "-",
-      "-",
-      "-",
-      "-",
       4.8,
       4.8
     ]);

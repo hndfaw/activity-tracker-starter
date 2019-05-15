@@ -28,49 +28,21 @@ class Sleep {
   }
 
   hoursSleptWeek(date) {
-    var sleptWeekDays = [];
     var userSleepData = this.userData.sleepData;
     var today = userSleepData.find(el => el.date === date);
     var todayIndex = userSleepData.indexOf(today);
-    for (let i = 0; i < userSleepData.length; i++) {
-      if (i >= todayIndex - 7 && i < todayIndex) {
-        sleptWeekDays.push(userSleepData[i].hoursSlept);
-      }
-    }
-    var finalSleptWeekDays = [];
-    if (sleptWeekDays.length === 7) {
-      finalSleptWeekDays = sleptWeekDays;
-    } else {
-      var newArray = [];
-      for (var i = 0; i < 7 - sleptWeekDays.length; i++) {
-        newArray.push("-");
-      }
-      finalSleptWeekDays = newArray.concat(sleptWeekDays);
-    }
-    return finalSleptWeekDays;
+    var fixFirstDayIndex = todayIndex - 7 > 0 ? todayIndex - 7 : 0;
+    let sleepData = userSleepData.slice(fixFirstDayIndex, todayIndex);
+    return sleepData.map(el => el.hoursSlept)
   }
 
   qualitySleptWeek(date) {
-    var qualityWeekDays = [];
     var userSleepData = this.userData.sleepData;
     var today = userSleepData.find(el => el.date === date);
     var todayIndex = userSleepData.indexOf(today);
-    for (let i = 0; i < userSleepData.length; i++) {
-      if (i >= todayIndex - 7 && i < todayIndex) {
-        qualityWeekDays.push(userSleepData[i].sleepQuality);
-      }
-    }
-    var finalQualityWeekDays = [];
-    if (qualityWeekDays.length === 7) {
-      finalQualityWeekDays = qualityWeekDays;
-    } else {
-      var newArray = [];
-      for (var i = 0; i < 7 - qualityWeekDays.length; i++) {
-        newArray.push("-");
-      }
-      finalQualityWeekDays = newArray.concat(qualityWeekDays);
-    }
-    return finalQualityWeekDays;
+    var fixFirstDayIndex = todayIndex - 7 > 0 ? todayIndex - 7 : 0;
+    let sleepData = userSleepData.slice(fixFirstDayIndex, todayIndex);
+    return sleepData.map(el => el.sleepQuality)
   }
 }
 

@@ -8,14 +8,12 @@
 }
 body {
   display: flex;
-  /*background-color: #F5F5F5;*/
 }
 
 main {
   width: 100%;
   display: flex;
-  /*background-color: #F5F5F5;*/
-  margin-left: 300px;
+  margin-left: 320px;
 }
 
 /* ----- sidebar ------ */
@@ -23,7 +21,7 @@ main {
 aside {
   box-shadow: 0 0 10 10 black;
   height: 100vh;
-  width: 300px;
+  width: 320px;
   border: gray 1px solid;
   display: flex;
   flex-direction: column;
@@ -82,10 +80,16 @@ aside {
 .widget {
   border: 1px solid gray;
   height: auto;
-  width: 550px;
+  width: 95%;
   border-radius: 5px;
   margin: 10px;
   background-color: #fff;
+}
+
+.main__column-one,
+.main__column-two {
+  width: 50%;
+  max-width: 750px;
 }
 
 .widget-main-header {
@@ -107,7 +111,7 @@ aside {
 
 .steps__daily-goal-table,
 .steps__daily-goal-input {
-  width: 400px;
+  width: 70%;
 }
 
 table, td, th {
@@ -174,13 +178,13 @@ th {
 .hours_slept_inner-data-two{
   margin-left: 15px;
   margin-right: 15px;
-  width: 200px;
+  width: 50%;
 }
 
 .center-hand-align {
   text-align: center;
   padding-bottom: 5px;
-  width: 100px
+  width: 30%;
 }
 
 .hours-slept__today-table {
@@ -261,9 +265,24 @@ th {
 
 .text-aling-right {
   text-align: right;
+  padding-top: 5px;
 }
 
 .tr-hiehgt-30 {
   height: 40px;
   border-bottom: 1px solid lightgray;
+}
+
+
+@media only screen and (max-width: 1400px) {
+  .steps-against-friends-table {
+    font-size: 0.9em;
+  }
+  .steps__daily-goal-table {
+    width: 60%;
+  }
+
+  .user-input {
+    font-size: 1em;
+  }
 }
