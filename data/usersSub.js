@@ -31,6 +31,6 @@ const userData = [
     "strideLength": 5.4,
     "dailyStepGoal": 8000
   },
-  ]
+]
 
 module.exports = userData;

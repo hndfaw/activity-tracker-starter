@@ -128,4 +128,4 @@ const activityData = [
   }
 ]
 
- module.exports = activityData;
+module.exports = activityData;
