@@ -1,4 +1,3 @@
-var UserRepository;
 if (typeof module !== "undefined") {
   UserRepository = require("./UserRepository");
 }

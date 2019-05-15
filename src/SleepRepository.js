@@ -1,4 +1,3 @@
-var UserRepository, Sleep, sleepFilePath, sleepData;
 if (typeof module !== "undefined") {
   UserRepository = require("../src/UserRepository");
   Sleep = require("./Sleep");

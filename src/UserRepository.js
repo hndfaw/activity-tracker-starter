@@ -1,4 +1,3 @@
-var usersFilePath, userData;
 if (typeof module !== "undefined") {
   usersFilePath = require("../data/usersSub");
 } else {

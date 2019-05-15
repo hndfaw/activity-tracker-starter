@@ -1,4 +1,3 @@
-var activityFilePath, activityData, Activity;
 if (typeof module !== "undefined") {
   activityFilePath = require("../data/activitySample.js");
 } else {
