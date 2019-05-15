@@ -105,11 +105,11 @@ class Activity {
     return weekMinutesActive
   }
 
-  threeDayIncreasingSteps(userID) {
+  threeDayIncreasingSteps() {
     var threeInARow = [];
     var threeInARowDates = [];
     var userStepData = this.userData.activityData;
-    const tIAR = userStepData.forEach(function(user) {
+    userStepData.forEach(function(user) {
       if (threeInARow.length >= 3) {
         threeInARow.shift()
       }

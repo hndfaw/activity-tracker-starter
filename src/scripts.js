@@ -155,7 +155,6 @@ $(window).on('load', () => {
     })
 
     var max = Math.max(...totals)
-    console.log(totals.indexOf(max)+1)
 
     if((totals.indexOf(max)+1) === 1) {
       $('.winner-you').css("color", "#548C72")
@@ -218,4 +217,6 @@ $(window).on('load', () => {
     $('.steps-against-friends-person-5-day-7').html(weeks[4][6]);
     $('.steps-against-friends-total-steps-person-5').html(totals[4]);
     
+    console.log(randomID)
+    console.log(instantiatedActivity.threeDayIncreasingSteps())
   })

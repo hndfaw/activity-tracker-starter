@@ -38,7 +38,7 @@ describe('UserRepository', function() {
 
   it('returnNamesFromIds should return all users names from their IDs', function() {
     const userRepository = new UserRepository('../data/usersSub.js');
-    expect(userRepository.returnNamesFromIds([1,2,4])).to.eql(["Nyasia Weber", "Shayne Swift", "Elaina Rau"]);
+    expect(userRepository.returnNamesFromIds([1,2,4])).to.eql(["Nyasia", "Shayne", "Elaina"]);
   });
 
 });

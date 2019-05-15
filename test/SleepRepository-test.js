@@ -1,12 +1,11 @@
 const chai = require('chai');
 const expect = chai.expect;
 const SleepRepository = require('../src/SleepRepository');
-// const sleepData = require('../data/sleepSample.js').sleepData
 
 describe('SleepRepository', function() {
   let sleepRepository
   beforeEach(function() {
-   sleepRepository = new SleepRepository('../data/sleepSample.js');
+   sleepRepository = new SleepRepository();
   })
 
   it('should be a function', function() {
@@ -32,7 +31,7 @@ describe('SleepRepository', function() {
   });
 
   it('sleepMostNames should find the Names of users who slept the most number of hours (one or more if they tied)', function() {
-    expect(sleepRepository.sleepMostNames([2,4])).to.eql(["Shayne Swift","Elaina Rau"]);
+    expect(sleepRepository.sleepMostNames([2,4])).to.eql(["Shayne","Elaina"]);
   });
 
 });
