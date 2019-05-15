@@ -296,7 +296,7 @@ const userActivityData2 = {
 
 
 describe('Activity', function() {
-let activity
+  let activity
   beforeEach(function() {
     activity = new Activity(userActivityData);
   })
@@ -368,7 +368,7 @@ let activity
   });
 
   it('threeDayIncreasingSteps should return an array of days that step count increased at least 3 in a row', function() {
-    activity3 = new Activity(userActivityData2);
+    const activity3 = new Activity(userActivityData2);
     expect(activity3.threeDayIncreasingSteps()).to.eql(['12/05/2019', '17/05/2019', '05/06/2019', '06/06/2019', '10/06/2019', '13/06/2019', '16/06/2019']);
   });
 });
