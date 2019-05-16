@@ -12,6 +12,5 @@ Primary Learmning Goals
  - OOP ( Object Oriented Programming )
  - jQuery
  - TDD ( Test Driven Development )
- - 
-
+ - Create a data dashboard that is easy to use and displays information in a clear way
 
