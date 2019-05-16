@@ -21,3 +21,10 @@ locations into a single space where relevant data can be dispayed in a consice, 
  ![Desktop layout](https://github.com/hndfaw/activity-tracker-starter/blob/master/images/Screen%20Shot%202019-05-16%20at%209.07.38%20AM.png)
  
   ![Desktop layout](https://github.com/hndfaw/activity-tracker-starter/blob/master/images/Screen%20Shot%202019-05-16%20at%209.07.55%20AM.png)
+
+
+**Contributors**
+
+[Jon O'Drobinak](https://github.com/Triplemanus)
+
+[Hindreen Fawzi](https://github.com/hndfaw)
