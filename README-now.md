@@ -1,4 +1,4 @@
-**Activity Tracker Application - getFIT FE Mod 2
+**Activity Tracker Application - getFIT FE Mod 2**
 
 An app/site for storing and viewing multiple measures of activity from an external source. FitBit, iWatch, or any
 other wearable device with motion sensors, heart rate monitor and/or gps location tracking.
